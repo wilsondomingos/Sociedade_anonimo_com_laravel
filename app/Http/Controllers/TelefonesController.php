@@ -35,6 +35,16 @@ class TelefonesController extends Controller
      */
     public function store(Request $request)
     {
+        $regras=[
+            'telefone'=>'required|min:3|max:45|'
+        ];
+        $mensagens=[
+             //mensagem para o email
+             'telefone.unique'=>'este telefone já foi cadastrado'
+
+        ];
+        $request->validate( $regras,$mensagens);
+
         $tele = new \App\Telefone();
         $tele->telefone = $request->input('telefone');
         $tele->save();

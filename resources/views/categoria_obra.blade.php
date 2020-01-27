@@ -28,7 +28,7 @@
 
       </select>
     <button type="submit" class="btn btn-primary">Cadastrar</button>
-      <a href="{{asset('info_obra')}}"class="btn btn-danger">cancelar</a>
+      <a href="{{asset('info_obra')}}"class="btn btn-warning">Continuar</a>
 	</form>
 	</div>
 @endsection

@@ -24,7 +24,9 @@ class ArtistasController extends Controller
      */
     public function create()
     {
-        return view('info_artista');
+        $telefone = \App\Telefone::all();
+        $usuario = \App\User::all();
+        return view('info_artista',compact('telefone','usuario'));
     }
 
     public function createTelefone()
@@ -40,7 +42,17 @@ class ArtistasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $art =new \App\Artista();
+        $art->rua = $request->input('rua');
+        $art->cidade = $request->input('cidade');
+        $art->estado = $request->input('estado');
+        $art->cpf = $request->input('cpf');
+        $art->rua = $request->input('rua');
+        $art->imagem = $request->hasFile('imagem');
+        $art->user_id = $request->input('user_id');
+        $art->telefone_id = $request->input('telefone_id');
+        $art->save();
+        return redirect()->route('perfil_user.estilo');
     }
 
     /**

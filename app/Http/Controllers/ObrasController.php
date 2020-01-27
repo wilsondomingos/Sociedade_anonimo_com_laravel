@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Artistas;
+use \App\User;
 use App\Obras;
 use Illuminate\Http\Request;
 
@@ -24,7 +25,9 @@ class ObrasController extends Controller
      */
     public function create()
     {
-        return view('info_obra');
+        $user = \App\Artista::all();
+        $Cat = \App\Categoria::all();
+        return view('info_obra', compact('Cat'));
     }
 
     /**
@@ -35,7 +38,19 @@ class ObrasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $obras =new \App\Obra();
+        $obras->artista_id = $request->input('user_id');
+        $obras->categoria_id = $request->input('categoria_id');
+        $obras->valor=$request->input('preco');
+        $obras->quantidade=$request->input('quantidade');
+        $obras->nome_da_obra=$request->input('obra');
+        $obras->criacao=$request->input('data');
+        $obras->tamanho=$request->input('tamanho');
+        $obras->tamanho=$request->input('tamanho');
+        $obras->imagem = $request->hasFile('imagem');
+        $obras->descricao=$request->input('descricao');
+        $obras->save();
+        return redirect()->route('perfil_user.estilo');
     }
 
     /**

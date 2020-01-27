@@ -21,10 +21,6 @@ class CreateVendasTable extends Migration
             $table->integer('cpf');
             $table->string('nome_comprador');
             $table->string('conta');
-
-            $table->unsignedBigInteger('venda_id');
-            $table->foreign('venda_id')->references('id')->on('vendas');
-            //$table->primary(['venda_id']);
             $table->timestamps();
         });
     }

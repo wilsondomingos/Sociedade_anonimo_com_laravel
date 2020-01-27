@@ -6,7 +6,7 @@ Route::get('/', 'HomeController@index')->name('home');
 
 //========================================= Rotas de usuarios =================================
 
-Route::get('/perfil_user', 'controlerPrincipal@estilo');
+Route::get('/perfil_user', 'controlerPrincipal@estilo')->name('perfil_user.estilo');
 
 Route::get('/favorito', function () {
     return view('favorito');
@@ -14,7 +14,7 @@ Route::get('/favorito', function () {
 
 //============================================= Rotas de Estilos e categoria das obras =========
 Route::get('/categoria_obra','CategoriasController@create' )->name('categoria_obra.create');
-Route::post('/categoria_obra/store','CategoriasController@store' );
+Route::get('/categoria_obra/store','CategoriasController@store' );
 
 
 Route::get('/estilo_obra','EstilosController@create' );
@@ -22,8 +22,11 @@ Route::post('/estilo_obra/store','EstilosController@store' );
 
 //============================================= Rotas de Cadastro das obras ====================
 Route::get('/info_obra','ObrasController@create' )->name('info_obra.create');
+Route::post('/info_obra/store','ObrasController@store' );
+
 //============================================= Rotas de Cadastro de artista ===================
 Route::get('/info_artista','ArtistasController@create' )->name('info_artista.create');
+Route::post('/info_artista/store','ArtistasController@store' );
 
 Route::get('/telefone','TelefonesController@create' );
 Route::post('/telefone/store','TelefonesController@store' );

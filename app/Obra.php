@@ -11,7 +11,7 @@ class Obra extends Model
     }
 
     function vendas(){
-        return $this->belongsTo('App\Venda');
+        return $this->belongsToMany("App\Venda","Venda_obra");
     }
 
     function carrinho(){
