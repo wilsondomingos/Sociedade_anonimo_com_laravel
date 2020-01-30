@@ -42,15 +42,47 @@ class ArtistasController extends Controller
      */
     public function store(Request $request)
     {
+        $regras=[
+            'rua'=>'required|min:3|max:45',
+            'cidade'=>'required|min:3|max:45',
+            'estado'=>'required|min:3|max:45',
+            'cpf'=>'required',
+            'foto' => 'required|dimensions:min_width=100,min_height=200',
+            'foto' => 'required|mimes:jpeg,bmp,png',
+
+        ];
+        $mensagens=[
+            //mensagem unuversal para todos campos
+            'required'=>'O campo :attribute não pode estar em branco',
+            //'min'=>'É necessário no minimo 3 caracteres para :attribute',
+            //'max'=>'É necessário no maximo 45 caracteres para :attribute',
+
+            //'cpf'=>'É necessário no minimo 11 numeros para o cpf',
+            'estado.min'=>'É necessário no minimo 3  caracteres para o estado',
+            'estado.max'=>'É necessário no  no maximo 45 caracteres para o estado',
+            'cidade.min'=>'É necessário no minimo 3 caracteres para a cidade',
+            'cidade.max'=>'É necessário no  maximo 45 caracteres para a cidade',
+            'rua.min'=>'É necessário no minimo 3 caracteres para a rua',
+            'rua.max'=>'É necessário no maximo 45 caracteres para a rua',
+
+            //mensagens para a imagem
+            'foto.dimensions'=>'A imagem deve ter o minimo de largura=100 e o minimo de altura =200',
+            //mensagens para a imagem
+             'foto.mimes'=>'o formato da imagem deve ser jpeg,bmp ou png '
+
+        ];
+        $request->validate( $regras,$mensagens);
+
         $art =new \App\Artista();
+        $path=$request->file('foto')->store('imagens','public');
         $art->rua = $request->input('rua');
         $art->cidade = $request->input('cidade');
         $art->estado = $request->input('estado');
         $art->cpf = $request->input('cpf');
-        $art->rua = $request->input('rua');
-        $art->imagem = $request->hasFile('imagem');
+        $art->imagem = $path;
         $art->user_id = $request->input('user_id');
         $art->telefone_id = $request->input('telefone_id');
+
         $art->save();
         return redirect()->route('perfil_user.estilo');
     }

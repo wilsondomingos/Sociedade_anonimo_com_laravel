@@ -34,40 +34,75 @@
 
                 <div class="form-group">
                     <label for="preco">Preço</label>
-                    <input type="number" name="preco" class="form-control " placeholder="informe o preço da obra">
+                    <input type="number" name="preco" class="form-control {{$errors->has('preco') ? 'is-invalid' : ''}}" placeholder="informe o preço da obra">
+                      @if ($errors->has('preco'))
+                    <div class="invalid-feedback">
+                        {{$errors->first('preco')}}
+                    </div>
+                 @endif
                 </div>
                  <div class="form-group">
                     <label for="quantidade">Quantidade</label>
-                    <input type="number" name="quantidade" class="form-control " placeholder="informe a quantidade ">
+                    <input type="number" name="quantidade" class="form-control {{$errors->has('quantidade') ? 'is-invalid' : ''}}" placeholder="informe a quantidade ">
+                      @if ($errors->has('quantidade'))
+                    <div class="invalid-feedback">
+                        {{$errors->first('quantidade')}}
+                    </div>
+                 @endif
                 </div>
 
                 <div class="form-group">
                     <label for="obra">Nome da obra</label>
-                    <input type="text" name="obra" class="form-control " placeholder="informe o nome da obra">
+                    <input type="text" name="obra" class="form-control {{$errors->has('obra') ? 'is-invalid' : ''}} " placeholder="informe o nome da obra">
+                      @if ($errors->has('obra'))
+                    <div class="invalid-feedback">
+                        {{$errors->first('obra')}}
+                    </div>
+                 @endif
                 </div>
 
                 <div class="form-row">
 
                     <div class="col-md-4 mb-3">
                         <label for="data">Data da criação</label>
-                        <input type="date" name="data" class="form-control ">
+                        <input type="date" name="data" class="form-control {{$errors->has('data') ? 'is-invalid' : ''}}">
+                          @if ($errors->has('data'))
+                    <div class="invalid-feedback">
+                        {{$errors->first('data')}}
+                    </div>
+                 @endif
                     </div>
 
                     <div class="col-md-4 mb-3">
                         <label for="tamanho">Tamanho da obra</label>
-                        <input type="number" name="tamanho" class="form-control "
+                        <input type="number" name="tamanho" class="form-control {{$errors->has('tamanho') ? 'is-invalid' : ''}}"
                             placeholder="informe o tamanho da obra">
+                                  @if ($errors->has('tamanho'))
+                    <div class="invalid-feedback">
+                        {{$errors->first('tamanho')}}
+                    </div>
+                 @endif
                     </div>
                 </div>
 
-                <div class="custom-file">
-                    <input type="file" class="custom-file-input" name="imagem"  id="imagem" lang="es">
+                <div class="custom-file mb-4">
+                    <input type="file" class="custom-file-input  {{$errors->has('imagem') ? 'is-invalid' : ''}}" name="imagem"  id="imagem" lang="es">
                     <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
+                        @if ($errors->has('imagem'))
+                    <div class="invalid-feedback">
+                        {{$errors->first('imagem')}}
+                    </div>
+                 @endif
                 </div>
 
                 <div class="form-group">
                 <label for="exampleFormControlTextarea1">Descrição da obra</label>
-                <textarea class="form-control" name="descricao"id="descricao" rows="3"></textarea>
+                <textarea class="form-control  {{$errors->has('descricao') ? 'is-invalid' : ''}}" name="descricao"id="descricao" rows="3"></textarea>
+                     @if ($errors->has('descricao'))
+                    <div class="invalid-feedback">
+                        {{$errors->first('descricao')}}
+                    </div>
+                 @endif
                 </div>
 
         <div class="col-md-4 mt-2">

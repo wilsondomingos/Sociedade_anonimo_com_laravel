@@ -7,14 +7,12 @@ Route::get('/', 'HomeController@index')->name('home');
 //========================================= Rotas de usuarios =================================
 
 Route::get('/perfil_user', 'controlerPrincipal@estilo')->name('perfil_user.estilo');
+Route::get('/favorito', 'controlerPrincipal@vendidos')->name('favorito.vendidos');
 
-Route::get('/favorito', function () {
-    return view('favorito');
-});
 
 //============================================= Rotas de Estilos e categoria das obras =========
 Route::get('/categoria_obra','CategoriasController@create' )->name('categoria_obra.create');
-Route::get('/categoria_obra/store','CategoriasController@store' );
+Route::post('/categoria_obra/store','CategoriasController@store' );
 
 
 Route::get('/estilo_obra','EstilosController@create' );

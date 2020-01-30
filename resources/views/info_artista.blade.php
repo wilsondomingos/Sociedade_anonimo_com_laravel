@@ -20,43 +20,60 @@
                </select>
                 <div class="form-group">
                     <label for="rua">Rua</label>
-                    <input type="text" name="rua" class="form-control " placeholder="Informe a rua">
+                    <input type="text" name="rua" class="form-control {{$errors->has('rua') ? 'is-invalid' : ''}}" placeholder="Informe a rua">
+                      @if ($errors->has('rua'))
+                    <div class="invalid-feedback">
+                        {{$errors->first('rua')}}
+                    </div>
+                 @endif
                 </div>
+
 
                 <div class="form-group">
                     <label for="cidade">Cidade</label>
-                    <input type="text" name="cidade" class="form-control " placeholder="informe a cidade">
+                    <input type="text" name="cidade" class="form-control {{$errors->has('cidade') ? 'is-invalid' : ''}}" placeholder="informe a cidade">
+                      @if ($errors->has('cidade'))
+                    <div class="invalid-feedback">
+                        {{$errors->first('cidade')}}
+                    </div>
+                 @endif
                 </div>
-
-
-
 
                 <div class="form-row">
 
                     <div class="col-md-4 mb-3">
                         <label for="inputState">Estado</label>
-                         <input type="text" name="estado" class="form-control " placeholder="informe o seu Estado">
-
+                         <input type="text" name="estado" class="form-control {{$errors->has('estado') ? 'is-invalid' : ''}}" placeholder="informe o seu Estado">
+                          @if ($errors->has('estado'))
+                    <div class="invalid-feedback">
+                        {{$errors->first('estado')}}
                     </div>
+                 @endif
+                    </div>
+
                     <div class="col-md-4 mb-1">
                         <label for="cpf">CPF</label>
-                        <input type="number" name="cpf" class="form-control " placeholder="informe o seu cpf">
+                        <input type="number" name="cpf" class="form-control  {{$errors->has('cpf') ? 'is-invalid' : ''}}" placeholder="informe o seu cpf">
+                          @if ($errors->has('cpf'))
+                    <div class="invalid-feedback">
+                        {{$errors->first('cpf')}}
                     </div>
-                </div>
- <!--
-                <div class="form-group">
-                    <label for="imagem">Foto</label>
-                    <input type="text" name="imagem" class="form-control "id="imagem" placeholder="Insira a foto">
-                </div>
--->
+                 @endif
+                    </div>
+
                 <div class="custom-file">
 
-                    <input type="file" class="custom-file-input" name="imagem" lang="es">
+                    <input type="file" class="custom-file-input {{$errors->has('foto') ? 'is-invalid' : ''}}" name="foto" lang="es">
                     <label class="custom-file-label" for="customFileLang">Seleccionar a foto</label>
+                     @if ($errors->has('foto'))
+                    <div class="invalid-feedback">
+                        {{$errors->first('foto')}}
+                    </div>
+                 @endif
                 </div>
 
 
-                <div class="col-md-4 mt-3">
+                <div class="col-md-4 mt-4">
                     <button type="submit" class="btn btn-primary">Cadastrar</button>
                 </div>
 
