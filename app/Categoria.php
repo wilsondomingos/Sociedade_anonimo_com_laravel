@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Categoria extends Model
 {
-    function estilos(){
-        return $this->belongsTo('App\Estilo');
+    function Obras(){
+        return $this->hasOne('App\Obra');
     }
 }

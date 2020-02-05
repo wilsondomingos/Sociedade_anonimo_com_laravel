@@ -22,6 +22,14 @@
                     <option value="{{ auth::user()->id}}">{{ auth::user()->name}}</option>
                      </select>
                     </div>
+                    <div class="form-group">
+              <label for="autor">Estilo</label>
+            <select class="form-control mb-1" name="estilo_id"id="estilo_id">
+                @foreach($Estilo as $c)
+                <option value="{{ $c['id'] }}">{{ $c['estilo']}}</option>
+                @endforeach
+            </select>
+                </div>
 
             <div class="form-group">
               <label for="autor">Categorias</label>
@@ -31,6 +39,7 @@
                 @endforeach
             </select>
                 </div>
+
 
                 <div class="form-group">
                     <label for="preco">Preço</label>

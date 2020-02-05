@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Vendas;
+use\App\Artista;
+use \App\Obra;
 use Illuminate\Http\Request;
 
 class VendasController extends Controller
@@ -32,8 +34,15 @@ class VendasController extends Controller
      */
     //============================== Cadastrar  compras ==================================================
     public function create()
+
     {
-        return view('/dados');
+        $artista= \App\Artista::all();
+        $OBRAS= \App\Obra::all();
+        $categoria= \App\Categoria::all();
+        $usuario= \App\User::all();
+        $estilo=\App\Estilo::all();
+        $carrinho = \App\Carrinho::all();
+        return view('carrinho', compact(['OBRAS','artista','categoria','usuario','estilo','carrinho']));
     }
 
     /**
@@ -44,9 +53,19 @@ class VendasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $carrinho = new \App\Carrinho();
+        $carrinho->obra_id = $request->input('obra_id');
+        $carrinho->artista_id = $request->input('artista_id');
+        $carrinho->user_id = $request->input('user_id');
+        $carrinho->save();
+        return redirect('index');
+
     }
 
+    public function dados()
+    {
+        return view('dados');
+    }
     /**
      * Display the specified resource.
      *

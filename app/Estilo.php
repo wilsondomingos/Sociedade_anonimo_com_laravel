@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Estilo extends Model
 {
-    function categorias(){
-        return $this->hasMany('App\Categoria');
+    function Obras(){
+        return $this->haOne('App\Obra');
     }
-    
+
 }

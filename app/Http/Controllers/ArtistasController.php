@@ -43,7 +43,7 @@ class ArtistasController extends Controller
     public function store(Request $request)
     {
         $regras=[
-            'rua'=>'required|min:3|max:45',
+            'rua'=>'required|min:3|max:45|',
             'cidade'=>'required|min:3|max:45',
             'estado'=>'required|min:3|max:45',
             'cpf'=>'required',

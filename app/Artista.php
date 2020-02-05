@@ -14,6 +14,7 @@ class Artista extends Model
         return $this->belongsTo('App\Obra');
     }
     function user(){
-        return $this->hasMany('App\User');
+        return $this->hasOne('App\User');
     }
+
 }

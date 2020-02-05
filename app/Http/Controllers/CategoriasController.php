@@ -26,9 +26,6 @@ class CategoriasController extends Controller
     public function create()
     {
 
-        $Estilo = \App\Estilo::find([1,2,3,4,5,6,7,8]);
-        //$est = new \App\Estilo();
-        return view('categoria_obra', compact('Estilo'));
     }
 
     /**
@@ -41,7 +38,6 @@ class CategoriasController extends Controller
     {
         $cat =new \App\Categoria();
         $cat->categoria = $request->input('categoria');
-        $cat->estilo_id = $request->input('estilo_id');
         $cat->save();
         return redirect()->route('info_obra.create');
     }

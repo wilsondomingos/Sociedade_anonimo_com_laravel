@@ -29,18 +29,23 @@
              <div class="menu-perfil mb-5">
 
        <ul>
+
+       @if(auth::user()->id != $art->user_id )
+       <li>
+            <a href="{{asset('telefone')}} " class=" btn-outline-success text-dark"> Tornar Artistista </a>
+       </li>
+      @elseif(auth::user()->id == $art->user_id )
+
+     @endif
         <li>
-            <a href="{{asset('telefone')}}"> Tornar Artistista </a>
-        </li>
-        <li>
-            <a href="{{asset('perfil_user')}}"> Vendas </a>
+            <a href="{{asset('perfil_user ')}}"class="btn-outline-success text-dark"> Vendas </a>
         </li>
 
         <li>
-            <a href="{{asset('favorito')}}"> Favoritos </a>
+            <a href="{{asset('favorito')}}"class="btn-outline-success text-dark"> Favoritos </a>
         </li>
         <li>
-            <a href="{{asset('estilo_obra')}}">Cadastrar obras</a>
+            <a href="{{asset('info_obra')}}"class="btn-outline-success text-dark">Cadastrar obras</a>
         </li>
      </ul>
 </div>
@@ -63,7 +68,7 @@
 
             @foreach ($OBRAS as $ob)
 
-@if($ob->artista_id== auth::user()->id)
+    @if($ob->artista_id== auth::user()->id)
                 <div class="col-md-6 col-lg-3 mb-sm-3">
                  <div class="card h-100">
                 <img src="/storage/{{$ob->imagem}}" class="card-img-top" alt="...">
@@ -90,6 +95,17 @@
                     <p class="card-text">Categoria: {{$cat->categoria }}  </p>
 
                       @endif
+                      @endforeach
+                       @foreach ($estilo as $est)
+
+
+                      @if($ob->estilo_id==$est->id)
+
+                        <p class="card-text">Estilo: {{$est->estilo }}  </p>
+
+                      @endif
+
+
                       @endforeach
 
                 </div>

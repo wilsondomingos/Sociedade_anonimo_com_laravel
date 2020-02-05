@@ -73,8 +73,10 @@
                 </div>
 
 
-                <div class="col-md-4 mt-4">
+                <div class="col-md-12 mt-4">
                     <button type="submit" class="btn btn-primary">Cadastrar</button>
+                    <a href="{{asset('perfil_user')}}"class="btn btn-warning">Continuar</a>
+                    <span class="ml-4 text-danger">Só se pode cadastrar artista uma unica vez, se já o fez apenas continue</span>
                 </div>
 
             </form>

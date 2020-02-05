@@ -37,7 +37,6 @@ class EstilosController extends Controller
      */
     public function store(Request $request)
     {
-
         $regras=[
             'estilo'=>'required|min:3|max:45|unique:estilos'
         ];

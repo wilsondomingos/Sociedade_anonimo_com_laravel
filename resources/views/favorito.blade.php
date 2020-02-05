@@ -25,19 +25,22 @@
         </div>
              <div class="menu-perfil mb-5">
 
+    
        <ul>
+
+         <li>
+            <a href="{{asset('telefone')}} " class="btn-outline-success text-dark"> Tornar Artistista </a>
+          </li>
+
         <li>
-            <a href="{{asset('telefone')}}"> Tornar Artistista </a>
-        </li>
-        <li>
-            <a href="{{asset('perfil_user')}}"> Vendas </a>
+            <a href="{{asset('perfil_user ')}}"class="btn-outline-success text-dark"> Vendas </a>
         </li>
 
         <li>
-            <a href="{{asset('favorito')}}"> Favoritos </a>
+            <a href="{{asset('favorito')}}"class="btn-outline-success text-dark"> Favoritos </a>
         </li>
         <li>
-            <a href="{{asset('estilo_obra')}}">Cadastrar obras</a>
+            <a href="{{asset('info_obra')}}"class="btn-outline-success text-dark">Cadastrar obras</a>
         </li>
      </ul>
 </div>

@@ -9,11 +9,13 @@
         @component('componente_navebar', [ "current" => $current ])
         @endcomponent
         <main role="main">
+
             @hasSection('body')
+
                 @yield('body')
+                
             @endif
-         @component('componente_consulta')
-         @endcomponent
+
         </main>
 
         @component('componente_footer', [ "current" => $current ])

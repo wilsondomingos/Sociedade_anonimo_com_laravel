@@ -24,6 +24,8 @@ class CreateObrasTable extends Migration
             $table->string('imagem');
             $table->unsignedBigInteger('artista_id');
             $table->unsignedBigInteger('categoria_id');
+            $table->unsignedBigInteger('estilo_id');
+            $table->foreign('estilo_id')->references('id')->on('estilos');
             $table->foreign('artista_id')->references('id')->on('artistas');
             $table->foreign('categoria_id')->references('id')->on('categorias');
             $table->timestamps();

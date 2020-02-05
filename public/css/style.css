@@ -13,9 +13,10 @@ body{
   width: 100vw;
   overflow-x: hidden;
 
+
 }
 .navbar {
-  background-color: #6495ED;
+
   box-shadow: 0px 5px 9px -3px rgba(0,0,0,0.75);
   margin-bottom: 3vh ;
 }
@@ -80,21 +81,18 @@ li a:hover{
 }
 
 
+
+/*
 .card{
   border: none;
   margin: 3px;
 }
-/*
 .card-body{
   border:1px solid rgb(193, 218, 255);
   border-radius: 2%;
   box-shadow: -10px 13px 18px -16px rgba(0,0,0,0.75);
   height: 35vh;
   width: 16vw;
-}
-*/
-.carousel{
-    height: 60vh;
 }
 .card-img-top{
   height: 40vh;
@@ -105,6 +103,41 @@ li a:hover{
 .card-title{
   font-size: 10px;
 }
+*/
+.carousel{
+    height: 60vh;
+    box-shadow: -10px 13px 18px -16px rgba(0,0,0,0.75);
+
+
+}
+.carousel img{
+
+    border: 1px solid green;
+}
+
+.card{
+    border: none;
+    margin: 3px;
+  }
+
+  .card-body{
+    border:1px solid rgb(193, 218, 255);
+    border-radius: 1%;
+    box-shadow: -10px 13px 18px -16px rgba(0,0,0,0.75);
+    height: 47vh;
+
+  }
+
+  .card-img-top{
+    height: 40vh;
+    width: 16vw;
+    margin: 2px;
+  }
+
+  .card-title{
+    font-size: 10px;
+  }
+
 
 footer .card{
   box-shadow: -10px 13px 18px -16px rgba(0,0,0,0.75);
@@ -155,14 +188,37 @@ div h3{
 }
 .card-img-onca{
     height: 68vh;
+
   }
 button:hover{
 
   box-shadow: -4px 13px 18px -8px rgba(0,0,0,0.75);
+
+}
+
+#perfi{
+    border-radius:100% ;
+    height: 90px;
+    width: 90px;
+    box-shadow: -10px 13px 18px -16px rgba(0,0,0,0.75);
+}
+
+.linha{
+    box-shadow: -10px 13px 18px -16px rgba(0,0,0,0.75);
+    border: 1px solid #cccc;
 }
 /*=======================Media telefones=======================*/
 
-
+.abs-pos {
+    position: absolute;
+    top: 6px;
+    right: 0;
+}
+.fix-pos {
+    position: fixed;
+    top: 0;
+    right: 0;
+}
 
 
 

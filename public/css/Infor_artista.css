@@ -8,8 +8,15 @@
   }
 
   .principal{
-    height: 88vh;
+    height: 80vh;
     width: 80vw;
+    border: 1px solid #cccc;
+    background-color: white;
+    box-shadow: -10px 13px 18px -16px rgba(0,0,0,0.75);
+   }
+   .principal1{
+    height: 60vh;
+    width: 50vw;
     border: 1px solid #cccc;
     background-color: white;
     box-shadow: -10px 13px 18px -16px rgba(0,0,0,0.75);

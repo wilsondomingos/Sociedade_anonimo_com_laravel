@@ -3,7 +3,7 @@
 @section('body')
 @auth
 <div class="conteudo mb-5 mt-5">
-    <div class="principal">
+    <div class="principal1">
 
         <div class="d-flex justify-content-center">
 

@@ -25,7 +25,8 @@ class ObrasController extends Controller
     {
         $user = \App\Artista::all();
         $Cat = \App\Categoria::all();
-        return view('info_obra', compact('Cat'));
+        $Estilo = \App\Estilo::all();
+        return view('info_obra', compact(['Cat','Estilo']));
     }
 
     /**
@@ -46,8 +47,8 @@ class ObrasController extends Controller
             'tamanho'=>'required',
 
 
-            'imagem' => 'required|dimensions:min_width=100,min_height=200',
-            'imagem' => 'required|mimes:jpeg,bmp,png',
+            'imagem' => 'required|dimensions:min_width=6000,min_height=6000',
+            'imagem' => 'required|mimes:jpeg,bmp,png,jpg',
             'descricao'=>'required|min:10|max:2000',
 
         ];
@@ -68,11 +69,12 @@ class ObrasController extends Controller
 
         ];
         $request->validate( $regras,$mensagens);
-
         $obras =new \App\Obra();
         $path=$request->file('imagem')->store('imagens','public');
+
         $obras->artista_id = $request->input('user_id');
         $obras->categoria_id = $request->input('categoria_id');
+        $obras->estilo_id = $request->input('estilo_id');
 
         $obras->valor=$request->input('preco');
         $obras->quantidade=$request->input('quantidade');

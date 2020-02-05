@@ -4,6 +4,7 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 
+
 //========================================= Rotas de usuarios =================================
 
 Route::get('/perfil_user', 'controlerPrincipal@estilo')->name('perfil_user.estilo');
@@ -44,8 +45,9 @@ Route::get('/sobre','controlerPrincipal@sobre' );
 Route::get('/consultas','controlerPrincipal@Consultar_Obras' );
 
 //============================================= Rotas para vendas ================================
-Route::get('/carrinho','VendasController@carrinho' );
-Route::get('/dados','VendasController@create' );
+Route::get('/carrinho','VendasController@create' );
+Route::post('/carrinho/store','VendasController@store' );
+Route::get('/dados','VendasController@dados' );
 Route::get('/confirmar','VendasController@confirmar' );
 
 

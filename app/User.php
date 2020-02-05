@@ -36,10 +36,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    function artista(){
+        return $this->hasOne('App\Artista');
+    }
     function carrinho(){
         return $this->hasOne('App\Carrinho');
-    }
-    function artista(){
-        return $this->hasMany('App\Artista');
     }
 }

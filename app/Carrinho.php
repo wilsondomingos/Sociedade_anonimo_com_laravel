@@ -14,4 +14,7 @@ class Carrinho extends Model
     {
         return $this->belongsTo('App\Obra');
     }
+    function artista(){
+        return $this->hasOne('App\Artista');
+    }
 }

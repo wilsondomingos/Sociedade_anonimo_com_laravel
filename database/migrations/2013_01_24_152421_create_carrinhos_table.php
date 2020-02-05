@@ -17,6 +17,8 @@ class CreateCarrinhosTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('obra_id');
             $table->foreign('obra_id')->references('id')->on('obras');
+            $table->unsignedBigInteger('artista_id');
+            $table->foreign('artista_id')->references('id')->on('artistas');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();

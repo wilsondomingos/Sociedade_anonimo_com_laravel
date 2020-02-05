@@ -21,7 +21,6 @@
 
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -88,7 +87,7 @@
     </header>
 
 
-    <nav class="  navbar navbar-expand-lg navbar-light menu-bar linque">
+    <nav class="  navbar navbar-expand-lg bg-success menu-bar linque abs-pos">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

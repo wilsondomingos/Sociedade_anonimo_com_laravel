@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use   Illuminate\Database\QueryException;
 
 class CreateEstilosTable extends Migration
 {
@@ -15,7 +16,7 @@ class CreateEstilosTable extends Migration
     {
         Schema::create('estilos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('estilo',255);
+            $table->string('estilo',50)->index();
             $table->timestamps();
         });
     }

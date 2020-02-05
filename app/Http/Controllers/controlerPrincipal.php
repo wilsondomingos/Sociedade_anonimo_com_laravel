@@ -27,24 +27,46 @@ class controlerPrincipal extends Controller
 
     //=========================== Mosta as pinturas da pagina ======================================
     public function pinturas () {
-        return view('/pinturas');
+
+        $artista= \App\Artista::all();
+        $OBRAS= \App\Obra::all();
+        $categoria= \App\Categoria::all();
+        $usuario= \App\User::all();
+        $estilo=\App\Estilo::all();
+        return view('pinturas', compact(['OBRAS','artista','categoria','usuario','estilo']));
     }
 
 
     //=========================== Mosta as fotografias da pagina ======================================
     public function fotografia () {
-        return view('/fotografia');
+        $artista= \App\Artista::all();
+        $OBRAS= \App\Obra::all();
+        $categoria= \App\Categoria::all();
+        $usuario= \App\User::all();
+        $estilo=\App\Estilo::all();
+        return view('fotografia', compact(['OBRAS','artista','categoria','usuario','estilo']));
+
     }
 
 
     //=========================== Mosta os desenhos da pagina ======================================
     public function desenhos () {
-        return view('/desenhos');
+        $artista= \App\Artista::all();
+        $OBRAS= \App\Obra::all();
+        $categoria= \App\Categoria::all();
+        $usuario= \App\User::all();
+        $estilo=\App\Estilo::all();
+        return view('desenhos', compact(['OBRAS','artista','categoria','usuario','estilo']));
     }
 
     //=========================== Mosta os prints da pagina ======================================
     public function prints () {
-        return view('/prints');
+        $artista= \App\Artista::all();
+        $OBRAS= \App\Obra::all();
+        $categoria= \App\Categoria::all();
+        $usuario= \App\User::all();
+        $estilo=\App\Estilo::all();
+        return view('prints', compact(['OBRAS','artista','categoria','usuario','estilo']));
     }
 
     //=========================== Mosta os quadradinhos da pagina ======================================
@@ -84,7 +106,9 @@ class controlerPrincipal extends Controller
             $OBRAS= \App\Obra::all();
             $categoria= \App\Categoria::all();
             $usuario= \App\User::all();
-            return view('perfil_user', compact(['OBRAS','artista','categoria','usuario']));
+            $estilo=\App\Estilo::all();
+
+            return view('perfil_user', compact(['OBRAS','artista','categoria','usuario','estilo',]));
     }
 
     public function vendidos(){

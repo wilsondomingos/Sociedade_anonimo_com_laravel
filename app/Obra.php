@@ -20,5 +20,8 @@ class Obra extends Model
     function categorias(){
         return $this->hasMany('App\Categoria');
     }
+    function estilos(){
+        return $this->hasMany('App\Estilo');
+    }
 
 }
