@@ -106,14 +106,23 @@ li a:hover{
 */
 .carousel{
     height: 60vh;
-    box-shadow: -10px 13px 18px -16px rgba(0,0,0,0.75);
+    box-shadow: -5px 13px 18px -13px rgba(0,0,0,0.75);
 
-
+}
+.carousel-item{
+    margin-top: 18px;
 }
 .carousel img{
 
-    border: 1px solid green;
+    border: 1px solid rgb(13, 251, 13);
+
 }
+.carousel {
+
+    border: 1px solid rgb(13, 251, 13);
+
+}
+
 
 .card{
     border: none;
@@ -209,16 +218,7 @@ button:hover{
 }
 /*=======================Media telefones=======================*/
 
-.abs-pos {
-    position: absolute;
-    top: 6px;
-    right: 0;
-}
-.fix-pos {
-    position: fixed;
-    top: 0;
-    right: 0;
-}
+
 
 
 

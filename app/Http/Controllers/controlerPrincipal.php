@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use \App\User;
 use \App\Artista;
 use \App\Estilo;
+use \App\Obra;
 use Illuminate\Support\Facades\Schema;
 class controlerPrincipal extends Controller
 {
@@ -12,8 +13,6 @@ class controlerPrincipal extends Controller
 
     //=========================== Mosta o home da pagina ======================================
     public function index () {
-
-
           $OBRAS= \App\Obra::all();
           $artista= \App\Artista::all();
           $categoria= \App\Categoria::all();
@@ -21,6 +20,7 @@ class controlerPrincipal extends Controller
           $estilo=\App\Estilo::all();
           return view('index', compact(['OBRAS','artista','categoria','usuario' ,'estilo']));
     }
+
     public function Consultar_Obras () {
         return view('/consultar');
     }
@@ -71,17 +71,33 @@ class controlerPrincipal extends Controller
 
     //=========================== Mosta os quadradinhos da pagina ======================================
     public function hq () {
-        return view('/hq');
+        $artista= \App\Artista::all();
+        $OBRAS= \App\Obra::all();
+        $categoria= \App\Categoria::all();
+        $usuario= \App\User::all();
+        $estilo=\App\Estilo::all();
+        return view('hq', compact(['OBRAS','artista','categoria','usuario','estilo']));
     }
 
     //=========================== Mosta as esculturas da pagina ======================================
     public function escultura () {
-        return view('/escultura');
+        $artista= \App\Artista::all();
+        $OBRAS= \App\Obra::all();
+        $categoria= \App\Categoria::all();
+        $usuario= \App\User::all();
+        $estilo=\App\Estilo::all();
+        return view('escultura', compact(['OBRAS','artista','categoria','usuario','estilo']));
     }
 
     //=========================== Mosta as arquiteturas da pagina ======================================
     public function arquitetura () {
-        return view('/arquitetura');
+        $artista= \App\Artista::all();
+        $OBRAS= \App\Obra::all();
+        $categoria= \App\Categoria::all();
+        $usuario= \App\User::all();
+        $estilo=\App\Estilo::all();
+        return view('arquitetura', compact(['OBRAS','artista','categoria','usuario','estilo']));
+     
     }
 
     //=========================== Mosta as politica deprivacidade da pagina ============================

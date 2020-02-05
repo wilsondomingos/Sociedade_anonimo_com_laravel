@@ -40,7 +40,7 @@
                                             </div>
                                             <p class="mt-5">wilson.md@wilson.com</p>
                                         </div>
-                                        success
+
                                         <div class="card">
                                         <div class="">
                                             <img src="./img/Slide pinturas/1.jpg"
@@ -406,9 +406,10 @@
                                     </div>
                                 </div>
                                 <!--==============================================================-->
-                                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                                <a class="carousel-control-prev"  href="#carouselExampleIndicators" role="button"
                                     data-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
                                     <span class="sr-only">Previous</span>
                                 </a>
                                 <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
@@ -477,6 +478,7 @@
                                     @csrf
                                     <input type="hidden" name="obra_id" value="{{ $ob['id'] }}">
                                     <input type="hidden" name="artista_id" value="{{ $ob['artista_id'] }}">
+                                    
                                     <input type="hidden" name="user_id" value="{{ auth::user()->id}}">
                                     <button type="submit" class="btn btn-sm btn-outline-success">Add Carrinho</button>
                                 </form>
@@ -494,7 +496,6 @@
         <!-- inicio do quadro lado a lado -->
         @endauth
         @guest
-        <link href="{{ asset('css/perfil.css') }}" rel="stylesheet">
 <div class=" container  navbar-light  ">
     <h1>
         <section class="info">
