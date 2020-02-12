@@ -16,5 +16,8 @@ class Artista extends Model
     function user(){
         return $this->hasOne('App\User');
     }
+    function Carrinho(){
+        return $this->hasOne('App\Carrinho');
+    }
 
 }

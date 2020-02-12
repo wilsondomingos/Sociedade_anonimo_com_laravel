@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -24,36 +25,42 @@
 </head>
 
 <body>
+<div class="acimaheader">
 
-    <header class="responsive">
-        <div class=" container log  ">
+</div>
+    <header class="responsive ">
+        <div class=" container log head ">
+
             <div class="logo col-lg-3  sm-ml-0-mr-0">
                 <h1>
-                    <img src="./img/logo_preto.png" width="210px" alt="">
+                    <h2 class="text-white ">Sociedade an{}nimo</h2>
                 </h1>
             </div>
 
             <div class="enter d-flex flex-row-reverse col-lg-8  ">
-
+                 <h6 class="text-danger"><strong> <?php  ?></strong></h6>
                 <li>
+
                     <a class="icons" href="{{ asset('carrinho') }}">
-                        <img class="icons" src="img/icons/shopping.svg" alt="bolca">
+
+                        <img class="icons" src="img/icons/carro.png"  alt="bolca">
+
                     </a>
                 </li>
 
 
                 @guest
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                   <strong> <a class="nav-link text-white" href="{{ route('login') }}">{{ __('Login') }}</a>
                 </li>
                 @if (Route::has('register'))
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                    <a class="nav-link text-white" href="{{ route('register') }}">{{ __('Register') }}</a>
                 </li>
                 @endif
                 @else
                 <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         {{ Auth::user()->name }} <span class="caret"></span>
                     </a>
@@ -87,7 +94,7 @@
     </header>
 
 
-    <nav class="  navbar navbar-expand-lg bg-success menu-bar linque abs-pos">
+    <nav class="  navbar navbar-expand-lg  menu-bar linque abs-pos">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -99,17 +106,17 @@
                     <a class="nav-dark " href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
                         <a href="{{ asset('index') }}">
-                            <img src="./img/home-24px.svg" alt=""> </a>
+                          <img src="{{asset('/img/icons/home.png')}}" id="foto" alt=""> </a>
                     </a>
                 </li>
                 <li class="nav-item dropdown mr-4">
                     <a class="nav-dark " href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
+                        aria-haspopup="true" aria-expanded="false" >
                         Pinturas
                     </a>
                     <div class="dropdown-menu btn-light mt-3">
-                        <a class="dropdown-item" href="{{ asset('pinturas') }}">TODOS</a>
-                        <a class="dropdown-item" href="#">FINE ART</a>
+                        <a class="dropdown-item " href="{{ asset('pinturas') }}">TODOS</a>
+                        <a  class="dropdown-item" href="#">FINE ART</a>
                         <a class="dropdown-item" href="#">MODERNA</a>
                         <a class="dropdown-item" href="#">ABSTRATA</a>
                         <a class="dropdown-item" href="#">POR ART</a>
@@ -197,7 +204,8 @@
     </nav>
     </div>
     </div>
-
+    <script src="{{asset('js/javasscript.js')}}"></script>
 </body>
+
 
 </html>

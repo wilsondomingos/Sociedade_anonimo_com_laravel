@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 use \App\User;
+use \App\Obra;
+use \App\Categoria;
+use \App\Estilo;
 use Illuminate\Http\Request;
 
 class ObrasController extends Controller
@@ -11,9 +14,15 @@ class ObrasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-
+        $artista = \App\Artista::all();
+        $telefone = \App\Telefone::all();
+        $Cat = \App\Categoria::all();
+        $Estilo = \App\Estilo::all();
+        $usuario= \App\User::all();
+        $ob = Obra::find($id);
+        return view('detalhe', compact(['ob','Estilo','Cat','artista','usuario','telefone','Cat']));
     }
 
     /**
@@ -94,7 +103,7 @@ class ObrasController extends Controller
      * @param  \App\Obras  $obras
      * @return \Illuminate\Http\Response
      */
-    public function show(Obras $obras)
+    public function show(Request $obras)
     {
         //
     }
@@ -105,9 +114,13 @@ class ObrasController extends Controller
      * @param  \App\Obras  $obras
      * @return \Illuminate\Http\Response
      */
-    public function edit(Obras $obras)
+    public function edit($id)
     {
-        //
+        $Cat = \App\Categoria::all();
+        $Estilo = \App\Estilo::all();
+        $ob = Obra::find($id);
+
+       return view('editar_obra', compact(['ob','Estilo','Cat']));
     }
 
     /**
@@ -117,9 +130,59 @@ class ObrasController extends Controller
      * @param  \App\Obras  $obras
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Obras $obras)
+    public function update(Request $request, $id)
     {
-        //
+
+        $regras=[
+            'preco'=>'required|numeric',
+            'quantidade'=>'required|numeric',
+
+            'obra'=>'required|min:3|max:45',
+            'data'=>'required|date',
+            'tamanho'=>'required',
+
+
+            'imagem' => 'required|dimensions:min_width=6000,min_height=6000',
+            'imagem' => 'required|mimes:jpeg,bmp,png,jpg',
+            'descricao'=>'required|min:10|max:2000',
+
+        ];
+        $mensagens=[
+            //mensagem unuversal para todos campos
+            'required'=>'O campo :attribute não pode estar em branco',
+            //'tamanho'=>'É necessário no minimo 34 X 34  para o tamanho',
+            'numeric'=>'O valor do compo :attribute deve ser numerico',
+
+            'obra'=>'É necessário no minimo 3 e no maximo 45 caracteres para o obra',
+
+
+            //mensagens para a imagem
+            'imagem'=>'A imagem deve ter o minimo de largura=100 e o minimo de altura =200',
+            //mensagens para a imagem
+             'imagem'=>'o formato da imagem deve ser jpeg,bmp ou png ',
+             'descricao'=>'É necessário no minimo 100 e no maximo 2000 caracteres para o descrição',
+
+        ];
+        $request->validate( $regras,$mensagens);
+
+        $obras = \App\Obra::find($id);
+        $path=$request->file('imagem')->store('imagens','public');
+
+        $obras->artista_id = $request->input('user_id');
+        $obras->categoria_id = $request->input('categoria_id');
+        $obras->estilo_id = $request->input('estilo_id');
+
+        $obras->valor=$request->input('preco');
+        $obras->quantidade=$request->input('quantidade');
+        $obras->nome_da_obra=$request->input('obra');
+        $obras->criacao=$request->input('data');
+        $obras->tamanho=$request->input('tamanho');
+        $obras->imagem = $path;
+        $obras->descricao=$request->input('descricao');
+        $obras->save();
+
+        return redirect()->route('perfil_user.estilo');
+
     }
 
     /**
@@ -128,8 +191,16 @@ class ObrasController extends Controller
      * @param  \App\Obras  $obras
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Obras $obras)
+    public function destroy( $id)
     {
-        //
+
+        $obs = Obra::find($id);
+
+
+        if (isset($obs)) {
+            $obs->delete();
+        }
+        return redirect()->route('perfil_user.estilo');
     }
 }
+

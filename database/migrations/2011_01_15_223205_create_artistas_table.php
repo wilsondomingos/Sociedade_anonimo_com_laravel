@@ -18,7 +18,7 @@ class CreateArtistasTable extends Migration
             $table->string('rua');
             $table->string('cidade');
             $table->string('estado');
-            $table->integer('cpf');
+            $table->string('cpf');
             $table->string('imagem');
             $table->unsignedBigInteger('telefone_id');
             $table->foreign('telefone_id')->references('id')->on('telefones');

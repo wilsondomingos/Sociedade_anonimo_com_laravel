@@ -15,7 +15,7 @@ class Obra extends Model
     }
 
     function carrinho(){
-        return $this->hasMany('App\Carrinho');
+        return $this->belongsTo('App\Carrinho');
     }
     function categorias(){
         return $this->hasMany('App\Categoria');

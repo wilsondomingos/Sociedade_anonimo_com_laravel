@@ -6,9 +6,9 @@
 
         <div class="col-md-8 ">
             <div class="card">
-                <div class="card-header bg-success">{{ __('Login') }}</div>
+                <div class="card-header bg-dark text-white ">{{ __('Login') }}</div>
 
-                <div class="card-body">
+                <div class="card-body ">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
@@ -54,7 +54,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-lg btn-outline-secondary">
                                     {{ __('Login') }}
                                 </button>
 

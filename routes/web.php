@@ -20,9 +20,14 @@ Route::post('/categoria_obra/store','CategoriasController@store' );
 Route::get('/estilo_obra','EstilosController@create' );
 Route::post('/estilo_obra/store','EstilosController@store' );
 
+
 //============================================= Rotas de Cadastro das obras ====================
 Route::get('/info_obra','ObrasController@create' )->name('info_obra.create');
 Route::post('/info_obra/store','ObrasController@store' );
+Route::get('/info_obra/editar/{id}','ObrasController@edit' );
+Route::patch('/info_obra/update{id}','ObrasController@update');
+Route::get('/info_obra/{idc}','ObrasController@destroy');
+Route::get('/detalhe/{idc}','ObrasController@index');
 
 //============================================= Rotas de Cadastro de artista ===================
 Route::get('/info_artista','ArtistasController@create' )->name('info_artista.create');
@@ -46,6 +51,7 @@ Route::get('/sobre','controlerPrincipal@sobre' );
 Route::get('/consultas','controlerPrincipal@Consultar_Obras' );
 
 //============================================= Rotas para vendas ================================
+Route::get('/carrinho','VendasController@create' );
 Route::get('/carrinho','VendasController@create' );
 Route::post('/carrinho/store','VendasController@store' );
 Route::get('/dados','VendasController@dados' );

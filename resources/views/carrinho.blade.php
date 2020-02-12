@@ -2,6 +2,7 @@
 
 @section('body')
 @auth
+
 <div class="conteudo container ">
 
 
@@ -28,11 +29,11 @@
 
                                 <div class="row mt-2">
                                     <div class="cal-lg-4 mr-5">
-                                        <button type="submit">Calcule o frete</button>
+                                        <button type="submit" class=" btn btn-sm btn-outline-secondary">Calcule o frete</button>
                                     </div>
                                     <div class="cal-lg-4 mr-5">
                                         <form method="GET">
-                                            <button class="control" type="submit">Dados da Conta</button>
+                                            <button class=" btn btn-sm btn-outline-secondary" type="submit">Dados da Conta</button>
                                         </form>
                                     </div>
                                 </div>
@@ -48,6 +49,7 @@
                 <h1>
                  Obras no Carrinho
                 </h1>
+
               </div>
             <div class="container">
               <div class="row">
@@ -95,6 +97,7 @@
                       @endforeach
 
                 </div>
+
             </div>
         </div>
          @endif
@@ -112,7 +115,6 @@
     </main>
 
 
-</div>
 @endauth
 @guest
 <div class="container">

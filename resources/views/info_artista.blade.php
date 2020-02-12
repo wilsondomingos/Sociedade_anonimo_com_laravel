@@ -53,7 +53,7 @@
 
                     <div class="col-md-4 mb-1">
                         <label for="cpf">CPF</label>
-                        <input type="number" name="cpf" class="form-control  {{$errors->has('cpf') ? 'is-invalid' : ''}}" placeholder="informe o seu cpf">
+                        <input type="text" name="cpf" class="form-control  {{$errors->has('cpf') ? 'is-invalid' : ''}}" placeholder="informe o seu cpf">
                           @if ($errors->has('cpf'))
                     <div class="invalid-feedback">
                         {{$errors->first('cpf')}}

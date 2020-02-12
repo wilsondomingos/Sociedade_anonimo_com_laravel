@@ -2,7 +2,11 @@
     <head>
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/Infor_obra.css') }}" rel="stylesheet">
-   
+
+     <link href="{{ asset('css/venda.css') }}" rel="stylesheet">
+
+        <link href="{{ asset('css/perfil.css') }}" rel="stylesheet">
+
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
         <meta name="csrf-token" content="{{ csrf_token() }}">

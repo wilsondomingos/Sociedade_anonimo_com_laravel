@@ -17,7 +17,6 @@ class Estiloseedrs extends Seeder
         DB::table('estilos')->insert(["estilo"=>"ART POP"]);
         DB::table('estilos')->insert(["estilo"=>"STREET ART"]);
         DB::table('estilos')->insert(["estilo"=>"REALISMO"]);
-        DB::table('estilos')->insert(["estilo"=>"REALISMO"]);
         DB::table('estilos')->insert(["estilo"=>"OUTROS"]);
 
     }

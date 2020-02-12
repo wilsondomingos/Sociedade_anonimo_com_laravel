@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Vendas;
 use\App\Artista;
 use \App\Obra;
+use \App\carrinho;
 use Illuminate\Http\Request;
 
 class VendasController extends Controller
@@ -18,7 +19,10 @@ class VendasController extends Controller
      //============================== Carrinho de compras ==================================================
     public function carrinho()
     {
-        return view('/carrinho');
+        $carr = Carrinho::count('id');
+        //$carrinhos = new \App\Carrinho();
+
+        return view('/carrinho',compact('carr'));
     }
 
     //============================== Confirmar compras ==================================================

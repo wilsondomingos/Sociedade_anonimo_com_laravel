@@ -9,18 +9,68 @@
 }
 html,
 body{
-  font-family: 'Roboto', sans-serif;
+  
   width: 100vw;
   overflow-x: hidden;
 
-
 }
+div h1{
+    font-size: 24px;
+    font-weight: normal;
+    text-shadow: 2px 2px 4px #cccc;
+    font-family: 'Roboto';
+  }
+.log{
+    display: flex;
+    justify-content: space-around;
+  }
+
+
+  .enter li{
+    display: inline;
+    justify-content: space-around;
+    list-style: none;
+    font-size: 20px;
+  }
 .navbar {
 
-  box-shadow: 0px 5px 9px -3px rgba(0,0,0,0.75);
+  box-shadow: 0px 3px 3px -3px rgba(0,0,0,0.75);
   margin-bottom: 3vh ;
+  background-color: #000000;
+  border: 1px solid #9c9c9c;
+  height: 9vh;
+}
+.cd{
+    box-shadow: 0px 3px 3px -3px rgba(0,0,0,0.75);
+    margin-bottom: 3vh ;
+    border: 1px solid #9c9c9c;
+    background-color: none;
+}
+.nav-dark{
+    color: white;
 }
 
+
+.responsive {
+    background-color: #000000;
+    height: 12vh;
+}
+.acimaheader{
+    height: 3vh;
+    background-color: #000000;
+    box-shadow: -10px 13px 18px -16px rgba(0,0,0,0.75);
+}
+.carousel-item{
+    height: 77vh;
+    border: 1px solid #9c9c9c;
+}
+.login{
+    background-color: #000000;
+}
+.d-block{
+    border: 1px solid #0000;
+    box-shadow: -10px 13px 18px -16px rgba(0,0,0,0.75);
+}
 
 .icons {
   padding: 1px;
@@ -30,22 +80,7 @@ body{
   border: none;
   }
 
-.log{
-  display: flex;
-  justify-content: space-around;
-}
 
-.enter{
-  display: flex;
-  width: 19vw;
-  margin-top: 2vh;
-}
-.enter li{
-  display: inline;
-  justify-content: space-around;
-  list-style: none;
-  font-size: 20px;
-}
 
 li a{
   margin: 0vh;
@@ -54,6 +89,7 @@ li a{
   font-size: 14px;
   color: #000000;
   line-height: normal;
+
 }
 a{
 
@@ -66,9 +102,10 @@ a:hover{
     text-decoration: none;
     color: #ccc;
 }
-li a:hover{
+.navbar li a:hover{
   text-decoration: none;
-  color: #ccc;
+
+  background-color: white;
 }
 .lista li a{
   font-size: 9px;
@@ -81,87 +118,26 @@ li a:hover{
 }
 
 
-
-/*
-.card{
-  border: none;
-  margin: 3px;
-}
-.card-body{
-  border:1px solid rgb(193, 218, 255);
-  border-radius: 2%;
-  box-shadow: -10px 13px 18px -16px rgba(0,0,0,0.75);
-  height: 35vh;
-  width: 16vw;
-}
-.card-img-top{
-  height: 40vh;
-  width: 16vw;
-  margin: 2px;
-}
-
-.card-title{
-  font-size: 10px;
-}
-*/
-.carousel{
-    height: 60vh;
-    box-shadow: -5px 13px 18px -13px rgba(0,0,0,0.75);
-
-}
-.carousel-item{
-    margin-top: 18px;
-}
-.carousel img{
-
-    border: 1px solid rgb(13, 251, 13);
-
-}
-.carousel {
-
-    border: 1px solid rgb(13, 251, 13);
-
-}
-
-
-.card{
-    border: none;
-    margin: 3px;
-  }
-
-  .card-body{
-    border:1px solid rgb(193, 218, 255);
-    border-radius: 1%;
-    box-shadow: -10px 13px 18px -16px rgba(0,0,0,0.75);
-    height: 47vh;
-
-  }
-
-  .card-img-top{
-    height: 40vh;
-    width: 16vw;
-    margin: 2px;
-  }
-
-  .card-title{
-    font-size: 10px;
-  }
-
-
-footer .card{
-  box-shadow: -10px 13px 18px -16px rgba(0,0,0,0.75);
-  height: 40vh;
-  font-size: 14px;
-}
 .linkfooter a{
    color: white;
 }
-div h1{
-  font-size: 24px;
-  font-weight: normal;
-  text-shadow: 2px 2px 4px #cccc;
-  font-family: 'Roboto';
+footer{
+    height: 90vh;
+    background-color: #000000;
 }
+
+.card {
+   height: 50vh;
+   background-color: #000000;
+}
+.ct {
+    color: white;
+    margin-left: 8vw;
+}
+.ct{
+    color: white;
+}
+
 div h2{
   font-size: 23px;
   font-weight: normal;
@@ -174,47 +150,23 @@ div h3{
   font-weight: normal
 }
 
-.button4 {
-  background-color: white; /* Green */
-  border: none;
-  color: #000000;
-  padding: 0;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
-  margin-left: 2vw;
+.texto-carosel{
+    font-style: italic;
+    text-align: left;
+    color: white;
 }
-
-
-.button5{
-  padding: 1rem 11rem;
-  background-color: black;
-  margin-left: 1rem;
-  color: white;
-  font-size: 1rem;
-
-}
-.card-img-onca{
-    height: 68vh;
-
-  }
-button:hover{
-
-  box-shadow: -4px 13px 18px -8px rgba(0,0,0,0.75);
-
-}
-
 #perfi{
     border-radius:100% ;
     height: 90px;
     width: 90px;
     box-shadow: -10px 13px 18px -16px rgba(0,0,0,0.75);
+
 }
 
 .linha{
     box-shadow: -10px 13px 18px -16px rgba(0,0,0,0.75);
-    border: 1px solid #cccc;
+    border: 1px solid #9c9c9c;
+
 }
 /*=======================Media telefones=======================*/
 

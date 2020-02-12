@@ -18,6 +18,8 @@
                 @yield('body')
             @endif
          </main>
+         @component('componente_footer', [ "current" => $current ])
+        @endcomponent
     </div>
 
 

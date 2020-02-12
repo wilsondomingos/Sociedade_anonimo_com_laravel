@@ -68,7 +68,7 @@
                 </div>
               </div>
               <div class="mb-4">
-                <button class="control" type="submit">Confirmar</button>
+                <button class=" btn btn-lg btn-outline-success" type="submit">Confirmar</button>
               </div>
             </div>
           </div>
@@ -79,5 +79,5 @@
     </article>
 
   </div>
-  
+
 @endsection

@@ -37,23 +37,7 @@ class EstilosController extends Controller
      */
     public function store(Request $request)
     {
-        $regras=[
-            'estilo'=>'required|min:3|max:45|unique:estilos'
-        ];
-        $mensagens=[
-             //mensagem para o email
-             'estilo.unique'=>'este estilo já foi cadastrado'
 
-        ];
-        $request->validate( $regras,$mensagens);
-
-
-        //$dados = $request->all();
-        //Grava os dados
-        $est = new \App\Estilo();
-        $est->estilo = $request->input('estilo');
-        $est->save();
-        return redirect()->route('categoria_obra.create');
 
     }
 
@@ -97,8 +81,9 @@ class EstilosController extends Controller
      * @param  \App\Estilos  $estilos
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Estilos $estilos)
+    public function destroy( $id)
     {
-        //
+
+        return redirect()->route('perfil_user.estilo');
     }
 }

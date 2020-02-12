@@ -20,7 +20,7 @@ class CreateObrasTable extends Migration
             $table->string('nome_da_obra');
             $table->date('criacao');
             $table->string('descricao');
-            $table->float('tamanho');
+            $table->string('tamanho');
             $table->string('imagem');
             $table->unsignedBigInteger('artista_id');
             $table->unsignedBigInteger('categoria_id');

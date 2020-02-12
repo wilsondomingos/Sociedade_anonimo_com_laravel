@@ -13,7 +13,7 @@
             @hasSection('body')
 
                 @yield('body')
-                
+
             @endif
 
         </main>
