@@ -77,7 +77,7 @@
                 <div class=" m-1 ml-4" style="width: 44.2rem;">
                     <div class="card-body ">
 
-                   <img src="/storage/{{$ob->imagem}}" height="530px" class="card-img" alt="...">
+                   <img src="/storage/{{$ob->imagem}}" height="430px" class="card-img" alt="...">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
