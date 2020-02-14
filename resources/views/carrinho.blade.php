@@ -13,7 +13,8 @@
 
 
                 <div class="d-flex justify-content-around">
-                      <div class="d-flex justify-content-around">
+
+                <div class="d-flex flex-row bd-highlight mb-3">
                     <div class="col-lg-7">
                         <span>Seu Carrinho</span>
                         <img src="./img/icons/carrinhos.jpg" width="260px" alt="">
@@ -23,8 +24,8 @@
                         <div class="col-lg-12">
                             <form action="{{ asset('dados') }}" method="GET">
 
-                                <div>
-                                    <input type="text" name="nome" placeholder="00000-000">
+                                <div class="row">
+                                    <input type="number" name="nome" placeholder="0000-000">
                                 </div>
 
                                 <div class="row mt-2">
@@ -60,46 +61,41 @@
 
 
              @if($carr->artista_id==$art->id && $carr->obra_id==$ob->id && auth::user()->id==$carr->user_id)
-                <div class="col-md-6 col-lg-3 mb-sm-3">
-                 <div class="card h-100">
-                <img src="/storage/{{$ob->imagem}}" class="card-img-top" alt="...">
-                <div class="card-body  ">
-                    <h1 class="card-title">Obra: {{$ob->nome_da_obra}}</h1>
-                    <h1 class="card-title">Quantidade: {{$ob->quantidade}}</h1>
-                    <p class="card-text">Valor: {{$ob->valor}}</p>
-                    <p class="card-text">Criação: {{$ob->criacao}}</p>
-                    @foreach ( $usuario as $us)
+                <div class=" m-1 ml-4" style="width: 22.2rem;">
+                    <div class="card-body ">
+                      <h5 class="card-title">Obra: {{$ob->nome_da_obra}}</h5>
+                      <h6 class="card-subtitle mb-2 text-muted">@foreach ( $usuario as $us)
+                        @foreach ($artista as $art)
 
+                        @if($us->id == $art->user_id && $art->id == $ob->artista_id )
+                        <p class="card-text">Artista: {{$us->name }} </p>
+                        @endif
+                        @endforeach
+                        @endforeach</h6>
+                      <img src="/storage/{{$ob->imagem}}" height="230px" class="card-img" alt="...">
+                      <h6 class="card-subtitle mt-2 mb-2 text-muted">Valor: {{$ob->valor}}</h6>
+                      <h6 class="card-subtitle  mb-2 text-muted">Quantidade: {{$ob->quantidade}}</h6>
+                      <h6 class="card-subtitle  mb-2 text-muted">@foreach ($categoria as $cat)
+                        @if($ob->categoria_id == $cat->id)
+                        <p class="card-text">Categoria: {{$cat->categoria }} </p>
+                        @endif
+                        @endforeach</h6>
+                        <h6 class="card-subtitle  mb-2 text-muted">@foreach ($estilo as $est)
+                            @if($ob->estilo_id==$est->id)
+                            <p class="card-text">Estilo: {{$est->estilo }} </p>
+                            @endif
+                            @endforeach</h6>
+                      <form action="carrinho/store" method="POST">
+                        @csrf
+                        <input type="hidden" name="obra_id" value="{{ $ob['id'] }}">
+                        <input type="hidden" name="artista_id" value="{{ $ob['artista_id'] }}">
 
-                     @if($us->id == $art->user_id && $art->id == $ob->artista_id )
-                    <p class="card-text">Artista: {{$us->name }}  </p>
-                      @endif
-
-                      @endforeach
-
-                      @foreach ($categoria as $cat)
-                     @if($ob->categoria_id == $cat->id)
-
-                    <p class="card-text">Categoria: {{$cat->categoria }}  </p>
-
-                      @endif
-                      @endforeach
-
-
-                      @foreach ($estilo as $est)
-
-
-                      @if($ob->estilo_id==$est->id)
-
-                        <p class="card-text">Estilo: {{$est->estilo }}  </p>
-
-                      @endif
-                      @endforeach
-
-                </div>
-
-            </div>
-        </div>
+                        <input type="hidden" name="user_id" value="{{ auth::user()->id}}">
+                        <button type="submit" class="btn btn-sm btn-outline-danger">Remover do Carrinho</button>
+                        <a href="/detalhe/{{$ob->id}}" class="btn btn-sm btn-outline-secondary">Detalhe</a>
+                    </form>
+                    </div>
+                  </div>
          @endif
           @endforeach
           @endforeach

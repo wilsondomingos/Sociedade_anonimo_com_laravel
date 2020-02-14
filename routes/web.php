@@ -2,8 +2,14 @@
 
 Auth::routes();
 
+
 Route::get('/', 'HomeController@index')->name('home')
 ->middleware();
+
+//Route::get('/admin','AdminController@index')->name('homeadmin');
+Route::get('/admin','AdminController@index')->name('admin.dashboard');
+Route::get('/admin/login','Auth\AdminLoginControler@index')->name('admin.login');
+Route::post('/admin/login','Auth\AdminLoginControler@login')->name('admin.login.submit');
 
 
 //========================================= Rotas de usuarios =================================
