@@ -23,6 +23,10 @@
             <li>
               <a href="{{ asset('index') }}">voltar para página inicial</a>
             </li>
+
+            <li>
+                <a href="factura" target="_blank">Gerar factura</a>
+              </li>
           </div>
         </div>
       </div>

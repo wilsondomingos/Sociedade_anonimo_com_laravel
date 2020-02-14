@@ -62,6 +62,7 @@ Route::get('/carrinho','VendasController@create' );
 Route::post('/carrinho/store','VendasController@store' );
 Route::get('/dados','VendasController@dados' );
 Route::get('/confirmar','VendasController@confirmar' );
+Route::get('/factura','VendasController@factura' );
 
 
 

@@ -7,7 +7,7 @@ use\App\Artista;
 use \App\Obra;
 use \App\carrinho;
 use Illuminate\Http\Request;
-
+use PDF;
 class VendasController extends Controller
 {
     /**
@@ -27,8 +27,16 @@ class VendasController extends Controller
 
     //============================== Confirmar compras ==================================================
     public function confirmar()
+
     {
         return view('/confirmar');
+    }
+
+    public function factura()
+
+    {
+        $pdf=PDF::loadView('factura');
+        return $pdf->setPaper('a4')->stream('factura.pdf');
     }
 
     /**
