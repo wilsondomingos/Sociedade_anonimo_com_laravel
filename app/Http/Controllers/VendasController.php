@@ -7,6 +7,7 @@ use\App\Artista;
 use \App\Obra;
 use \App\carrinho;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use PDF;
 class VendasController extends Controller
 {
@@ -48,6 +49,20 @@ class VendasController extends Controller
     public function create()
 
     {
+
+        $idcarr=\App\Carrinho::select('obra_id');
+        $idart=\App\Artista::select('id');
+        $valor=\App\Obra::select('valor') ->where('id',$idcarr and 'artista_id',$idart)->get();
+
+
+        $valor = DB::table('carrinhos')
+        ->join('obras', 'obras.id', '=', 'carrinhos.obra_id')
+        ->join('artistas', 'artistas.id', '=', 'carrinhos.artista_id')
+        ->select ('obras.*','obras.valor')
+        ->get();
+
+
+
         $artista= \App\Artista::all();
         $OBRAS= \App\Obra::all();
         $categoria= \App\Categoria::all();

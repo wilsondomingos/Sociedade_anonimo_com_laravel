@@ -36,7 +36,7 @@
        </li>
 
 
-   
+
         <li>
             <a href="{{asset('perfil_user ')}}"class="btn-outline-secondary text-dark"> Vendas </a>
         </li>
@@ -110,7 +110,7 @@
           </div>
         </div>
       </div>
-
+ </div>
 
 
 @endauth

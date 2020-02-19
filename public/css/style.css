@@ -9,7 +9,7 @@
 }
 html,
 body{
-  
+
   width: 100vw;
   overflow-x: hidden;
 
@@ -49,6 +49,7 @@ div h1{
 .nav-dark{
     color: white;
 }
+
 
 
 .responsive {
@@ -100,13 +101,14 @@ a{
 }
 a:hover{
     text-decoration: none;
-    color: #ccc;
+    color: white;
 }
 .navbar li a:hover{
   text-decoration: none;
 
-  background-color: white;
+  background-color: #cccc;
 }
+
 .lista li a{
   font-size: 9px;
   text-decoration: none;

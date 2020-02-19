@@ -93,117 +93,42 @@
 
     </header>
 
+<nav class="navbar navbar-expand-lg navbar-light bg-light ">
 
-    <nav class="  navbar navbar-expand-lg  menu-bar linque abs-pos">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="  collapse navbar-collapse " id="navbarNavDropdown">
-            <ul class=" container navbar-nav">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse  " id="navbarNav">
+    <ul class="navbar-nav container">
+      <li class="nav-item active">
+        <a class="nav-link text-dark" href="{{ asset('index') }}">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="{{ asset('pinturas') }}">Pinturas</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="{{ asset('fotografias') }}">Fotografias</a>
+      </li>
+        </li>
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="{{ asset('desenhos') }}">Desenhos</a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link text-dark" href="{{ asset('prints') }}">Prints</a>
+      </li>
+        <li class="nav-item">
+       <a class="nav-link text-dark" href="{{ asset('hq') }}">HQ - Quadradinhos</a>
+      </li>
+        <li class="nav-item">
+       <a class="nav-link text-dark" href="{{ asset('escultura') }}">Esculturas</a>
+      </li>
+       <li class="nav-item">
+       <a class="nav-link text-dark" href="{{ asset('arquitetura') }}">Arquitetura</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-                <li class=" nav-item dropdown mr-4">
-                    <a class="nav-dark " href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        <a href="{{ asset('index') }}">
-                          <img src="{{asset('/img/icons/home.png')}}" id="foto" alt=""> </a>
-                    </a>
-                </li>
-                <li class="nav-item dropdown mr-4">
-                    <a class="nav-dark " href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false" >
-                        Pinturas
-                    </a>
-                    <div class="dropdown-menu btn-light mt-3">
-                        <a class="dropdown-item " href="{{ asset('pinturas') }}">TODOS</a>
-                        <a  class="dropdown-item" href="#">FINE ART</a>
-                        <a class="dropdown-item" href="#">MODERNA</a>
-                        <a class="dropdown-item" href="#">ABSTRATA</a>
-                        <a class="dropdown-item" href="#">POR ART</a>
-                        <a class="dropdown-item" href="#">STREET ART</a>
-                    </div>
-                </li>
-
-                <li class="nav-item dropdown mr-4">
-                    <a class="nav-dark" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Fotografias
-                    </a>
-                    <div class="dropdown-menu btn-light mt-3">
-                        <a class="dropdown-item" href="{{ asset('fotografias') }}">TODOS</a>
-                        <a class="dropdown-item" href="#">FINE ART</a>
-                        <a class="dropdown-item" href="#">MODERNA</a>
-                        <a class="dropdown-item" href="#">ABSTRATA</a>
-                        <a class="dropdown-item" href="#">CONCEITUAL</a>
-                        <a class="dropdown-item" href="#">RETRATO</a>
-                    </div>
-                </li>
-
-                <li class="nav-item dropdown mr-4">
-                    <a class="nav-dark" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Desenho
-                    </a>
-                    <div class="dropdown-menu btn-light mt-3">
-                        <a class="dropdown-item" href="{{ asset('desenhos') }}">TODOS</a>
-                        <a class="dropdown-item" href="#">FINE ART</a>
-                        <a class="dropdown-item" href="#">MODERNA</a>
-                        <a class="dropdown-item" href="#">ABSTRATA</a>
-                        <a class="dropdown-item" href="#">GRAFITTI</a>
-                        <a class="dropdown-item" href="#">ILUSTRACAO DIGITAL</a>
-                    </div>
-                </li>
-
-                <li class="nav-item dropdown mr-4">
-                    <a class="nav-dark " href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Prints
-                    </a>
-                    <div class="dropdown-menu btn-light mt-3">
-                        <a class="dropdown-item" href="{{ asset('prints') }}">TODOS</a>
-                        <a class="dropdown-item" href="#">COLAGEM</a>
-                        <a class="dropdown-item" href="#">MODERNA</a>
-                        <a class="dropdown-item" href="#">ABSTRATA</a>
-                        <a class="dropdown-item" href="#">GRAFITTI</a>
-                        <a class="dropdown-item" href="#">ILUSTRACAO DIGITAL</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown mr-4">
-                    <a class="nav-dark " href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        HQ
-                    </a>
-                    <div class="dropdown-menu btn-light mt-3">
-                        <a class="dropdown-item" href="{{ asset('hq') }}">TODOS</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown mr-4">
-                    <a class="nav-dark" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Esculturas
-                    </a>
-                    <div class="dropdown-menu btn-light mt-3">
-                        <a class="dropdown-item" href="{{ asset('escultura') }}">TODOS</a>
-                        <a class="dropdown-item" href="#">FINE ART</a>
-                        <a class="dropdown-item" href="#">MODERNA</a>
-                        <a class="dropdown-item" href="#">ABSTRATA</a>
-                        <a class="dropdown-item" href="#">MINIMALISTA</a>
-                        <a class="dropdown-item" href="#">FIGURATIVA</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown mr-1">
-                    <a class="nav-dark" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Outros
-                    </a>
-                    <div class="dropdown-menu btn-light mt-3">
-                        <a class="dropdown-item" href="{{ asset('arquitetura') }}">ARQUITETURA</a>
-                    </div>
-            </ul>
-        </div>
-    </nav>
-    </div>
-    </div>
     <script src="{{asset('js/javasscript.js')}}"></script>
 </body>
 

@@ -25,7 +25,7 @@
                             <form action="{{ asset('dados') }}" method="GET">
 
                                 <div class="row">
-                                    <input type="number" name="nome" placeholder="0000-000">
+                                    <input type="number" name="nome" placeholder="0000-000" value="">
                                 </div>
 
                                 <div class="row mt-2">
@@ -49,8 +49,7 @@
             <div class=" container mb-4 ">
                 <h1>
                  Obras no Carrinho
-                </h1>
-
+            
               </div>
             <div class="container">
               <div class="row">
@@ -119,3 +118,19 @@
 @endguest
 
 @endsection
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
