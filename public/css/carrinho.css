@@ -72,9 +72,7 @@ section> div:nth-child(2){
 
 
 .conteudo{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
     width: 100vw;
     height: 48vw;
   }
@@ -82,7 +80,8 @@ section> div:nth-child(2){
 
   article{
 
-   width: 90vw;
+   width: 60vw;
+   height: 90vh;
    border: 1px solid #cccc;
    background-color: white;
    box-shadow: -10px 13px 18px -16px rgba(0,0,0,0.75);
@@ -168,7 +167,7 @@ section> div:nth-child(2){
     margin: 5vh 17vw 0 2vw;
   }
 
-  
+
 
 
 

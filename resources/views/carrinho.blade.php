@@ -49,7 +49,7 @@
             <div class=" container mb-4 ">
                 <h1>
                  Obras no Carrinho
-            
+                    
               </div>
             <div class="container">
               <div class="row">
@@ -90,7 +90,7 @@
                         <input type="hidden" name="artista_id" value="{{ $ob['artista_id'] }}">
 
                         <input type="hidden" name="user_id" value="{{ auth::user()->id}}">
-                        <button type="submit" class="btn btn-sm btn-outline-danger">Remover do Carrinho</button>
+                        <a href="carrinho/{{$carr->id}}" class="btn btn-sm btn-outline-danger">Remover do Carrinho</a>
                         <a href="/detalhe/{{$ob->id}}" class="btn btn-sm btn-outline-secondary">Detalhe</a>
                     </form>
                     </div>

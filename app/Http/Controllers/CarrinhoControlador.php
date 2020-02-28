@@ -7,7 +7,7 @@ use \App\Carrinho;
 
 class CarrinhoControlador extends Controller
 {
-    //
+    
 
 }
 

@@ -38,7 +38,7 @@
             </div>
 
             <div class="enter d-flex flex-row-reverse col-lg-8  ">
-                 <h6 class="text-danger"><strong> <?php  ?></strong></h6>
+                 <h6 class="text-danger"><strong>  </strong></h6>
                 <li>
 
                     <a class="icons" href="{{ asset('carrinho') }}">
@@ -134,3 +134,4 @@
 
 
 </html>
+

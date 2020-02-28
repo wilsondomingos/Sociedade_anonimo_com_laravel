@@ -85,7 +85,9 @@ class VendasController extends Controller
         $carrinho->artista_id = $request->input('artista_id');
         $carrinho->user_id = $request->input('user_id');
         $carrinho->save();
-        return redirect('index');
+
+
+        return redirect('carrinho');
 
     }
 
@@ -133,8 +135,21 @@ class VendasController extends Controller
      * @param  \App\Vendas  $vendas
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Vendas $vendas)
+    public function destroy( $id)
     {
-        //
+
+        $carrinho = Carrinho::find($id);
+
+
+        if (isset($carrinho)) {
+            $carrinho->delete();
+        }
+        return redirect('carrinho');
     }
+
+
+
+
 }
+
+

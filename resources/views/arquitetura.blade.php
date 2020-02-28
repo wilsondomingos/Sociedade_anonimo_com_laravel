@@ -1,6 +1,7 @@
 @extends('layout.app8', ["current" => "home"])
 
 @section('body')
+@auth
 <div class=" container  navbar-light  ">
     <h1>
       ARQUITETURAS
@@ -58,5 +59,11 @@
           @endforeach
           @endforeach
           </div>
+           @endauth
+        @guest
+    <div class="container">
+        <h4>Você não está logado</h4>
+    </div>
+     @endguest
 
 @endsection

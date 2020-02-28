@@ -97,7 +97,7 @@ class controlerPrincipal extends Controller
         $usuario= \App\User::all();
         $estilo=\App\Estilo::all();
         return view('arquitetura', compact(['OBRAS','artista','categoria','usuario','estilo']));
-     
+
     }
 
     //=========================== Mosta as politica deprivacidade da pagina ============================

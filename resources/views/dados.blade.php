@@ -1,9 +1,9 @@
 @extends('layout.app4', ["current" => "home"])
 
 @section('body')
-<div class=" conteudo container">
+<div class=" conteudo container d-flex justify-content-center">
 
-    <article>
+    <article class="d-flex justify-content-center">
 
       <section>
         <div>
@@ -62,13 +62,13 @@
               </div>
             </div>
             <div class="confimacao">
-              <div>
+              <div class="d-flex justify-content-between">
                 <div>
                   <span>Total R$525,10</span>
                 </div>
               </div>
-              <div class="mb-4">
-                <button class=" btn btn-lg btn-outline-success" type="submit">Confirmar</button>
+              <div class="">
+                <button class=" btn btn-lg btn-outline-dark" type="submit">Confirmar</button>
               </div>
             </div>
           </div>
