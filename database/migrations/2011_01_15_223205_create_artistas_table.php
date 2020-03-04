@@ -21,9 +21,9 @@ class CreateArtistasTable extends Migration
             $table->string('cpf');
             $table->string('imagem');
             $table->unsignedBigInteger('telefone_id');
-            $table->foreign('telefone_id')->references('id')->on('telefones');
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('telefone_id')->references('id')->on('telefones')-> onDelete("cascade")-> onUpdate("cascade");
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users')-> onDelete("cascade")-> onUpdate("cascade");
             $table->timestamps();
         });
     }

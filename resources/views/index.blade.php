@@ -1,4 +1,4 @@
-@extends('layout.app8', ["current" => "home"])
+@extends('layout.app8', ["current" => 'home'])
 
 @section('body')
 @auth
@@ -70,6 +70,7 @@
     <div class="container mt-5">
         <h2>
             Destaques | Artes de semana selecionadas pela nossa curadoria
+
         </h2>
     </div>
     <div class="album py-5 bg-light linha mb-5">
@@ -107,9 +108,12 @@
                         @csrf
                         <input type="hidden" name="obra_id" value="{{ $ob['id'] }}">
                         <input type="hidden" name="artista_id" value="{{ $ob['artista_id'] }}">
+                         @if(auth::user()->id==$ob->artista_id)
 
+                         @else
                         <input type="hidden" name="user_id" value="{{ auth::user()->id}}">
-                        <button type="submit" class="btn btn-sm btn-outline-secondary">Add Carrinho</button>
+                        <button type="submit" class="btn btn-sm btn-outline-info">Add Carrinho</button>
+                        @endif
                         <a href="/detalhe/{{$ob->id}}" class="btn btn-sm btn-outline-secondary">Detalhe</a>
                     </form>
                     </div>

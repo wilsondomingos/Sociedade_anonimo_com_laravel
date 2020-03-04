@@ -8,14 +8,16 @@
         <div class="d-flex justify-content-center">
             <form action="info_artista/store" method="POST" enctype="multipart/form-data" class="col-12">
                 @csrf
-                <h1 class="mt-5 mb-3">Informações do artista</h1>
+                <h1 class="mt-5 mb-3">Informações do Usuário</h1>
 
                  <select class="form-control mb-2" name="user_id"id="user_id">
                     <option value="{{ auth::user()->id}}">{{ auth::user()->name}}</option>
                </select>
                <select class="form-control mb-2" name="telefone_id"id="telefone_id">
                 @foreach($telefone as $tel)
+                   @if($tel->id==auth::user()->id)
                     <option value="{{ $tel['id'] }}">{{ $tel['telefone']}}</option>
+                    @endif
                 @endforeach
                </select>
                 <div class="form-group">
@@ -75,8 +77,8 @@
 
                 <div class="col-md-12 mt-4">
                     <button type="submit" class="btn btn-primary">Cadastrar</button>
-                    <a href="{{asset('perfil_user')}}"class="btn btn-warning">Continuar</a>
-                    <span class="ml-4 text-danger">Só se pode cadastrar artista uma unica vez, se já o fez apenas continue</span>
+                    <a href="{{asset('telefone')}}"class="btn btn-danger">Cancelar</a>
+
                 </div>
 
             </form>

@@ -3,16 +3,21 @@
 Auth::routes();
 
 
-Route::get('/', 'HomeController@index')->name('home')
-->middleware();
+Route::get('/', 'HomeController@index')->name('home');
 
 //Route::get('/admin','AdminController@index')->name('homeadmin');
+
+
+Route::get('/admin/login','Auth\AdminLoginControler@index')->name('admin.login');
+Route::post('/admin/login','Auth\AdminLoginControler@login')->name('admin.login.submit');
 Route::get('/admin','AdminController@index')->name('admin.dashboard');
 Route::get('/adminListauser','AdminController@listauser')->name('admin.Listauser');
 Route::get('/adminListaArtista','AdminController@listaArtista')->name('admin.adminListaArtista');
 Route::get('/adminListaObras','AdminController@listaObra')->name('admin.adminListaObras');
-Route::get('/admin/login','Auth\AdminLoginControler@index')->name('admin.login');
-Route::post('/admin/login','Auth\AdminLoginControler@login')->name('admin.login.submit');
+
+
+
+
 
 
 //========================================= Rotas de usuarios =================================
@@ -67,6 +72,9 @@ Route::get('/carrinho','VendasController@create' );
 
 Route::post('/carrinho/store','VendasController@store' );
 Route::get('/carrinho/{id}','VendasController@destroy');
+Route::post('/dados','VendasController@dados' );
+Route::post('/confirmar','VendasController@RegistarVendas' );
+//Route::post('/confirmar','VendasController@confirmar' );
 Route::get('/dados','VendasController@dados' );
 Route::get('/confirmar','VendasController@confirmar' );
 Route::get('/factura','VendasController@factura' );

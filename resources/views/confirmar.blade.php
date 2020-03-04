@@ -1,6 +1,7 @@
 @extends('layout.app4', ["current" => "home"])
 
 @section('body')
+@auth
  <div class="container">
 
     <main class="row container">
@@ -31,4 +32,11 @@
         </div>
       </div>
     </main>
+     @endauth
+@guest
+    <div class="container">
+        <h4>Você não está logado</h4>
+    </div>
+
+    @endguest
 @endsection

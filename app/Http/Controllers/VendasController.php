@@ -1,13 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Vendas;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use \App\Venda;
+use \App\Venda_obra;
 use\App\Artista;
 use \App\Obra;
 use \App\carrinho;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use \App\User;
 use PDF;
 class VendasController extends Controller
 {
@@ -36,8 +37,20 @@ class VendasController extends Controller
     public function factura()
 
     {
-        $pdf=PDF::loadView('factura');
-        return $pdf->setPaper('a4')->stream('factura.pdf');
+        $userLogado=auth()->User()->id;
+        //dd($userLogado);
+        $vendas = Venda::where('user_id', $userLogado,'id',)->get();
+        $Obra_vendidas = Venda_obra::where('user_id', $userLogado,'id',)->get();
+        /*->join('users', 'vendas.user_id', '=', $userLogado)
+        ->join('venda_obras', 'venda_obras.user_id', '=', 'Vendas.user_id')
+        ->join('Obras', 'Obras.id', '=', 'venda_obras.obra_id')
+        ->join('Artistas', 'Artistas.id', '=', 'venda_obras.artista_id')
+         ->select('Vendas.*','users.*','Artistas.*','Obras.*')
+         ->get();
+         */
+         //dd($venda);
+        $pdf=PDF::loadView('factura',compact(['vendas','Obra_vendidas']));
+        return  $pdf->setPaper('a4')->stream('factura.pdf');
     }
 
     /**
@@ -81,20 +94,83 @@ class VendasController extends Controller
     public function store(Request $request)
     {
         $carrinho = new \App\Carrinho();
+        $venda_obra=new \App\Venda_obra();
+
         $carrinho->obra_id = $request->input('obra_id');
         $carrinho->artista_id = $request->input('artista_id');
         $carrinho->user_id = $request->input('user_id');
         $carrinho->save();
+
+        $venda_obra->obra_id = $request->input('obra_id');
+        $venda_obra->artista_id = $request->input('artista_id');
+        $venda_obra->user_id = $request->input('user_id');
+        $venda_obra->save();
 
 
         return redirect('carrinho');
 
     }
 
-    public function dados()
+    public function dados(Request $request)
     {
-        return view('dados');
+        $arti= \App\Artista::all();
+        $val=$request->input('nome');
+        $obra=$request->input('obra');
+        $artista=$request->input('artista');
+        //dd( $val);
+        return view('dados',compact(['val','obra','artista','arti']));
     }
+
+    public function  RegistarVendas(Request $request)
+    {
+
+
+        $regras=[
+
+                  'rua'=>'required',
+                  'numero'=>'required',
+                  'compl'=>'required|numeric',
+
+                  'cpf'=>'required|min:14|max:14',
+
+                  'nome'=>'required',
+                  'nº'=>'required',
+                  'valor'=>'required|numeric',
+                  //'user_id'=>'required|numeric',
+
+
+
+              ];
+              $mensagens=[
+                  //mensagem unuversal para todos campos
+                  'required'=>'O campo :attribute não pode estar em branco',
+                  //'tamanho'=>'É necessário no minimo 34 X 34  para o tamanho',
+                  'numeric'=>'O valor do compo :attribute deve ser numerico',
+
+                  'cpf'=>'É necessário no minimo 14 e no maximo 14 caracteres para o cpf',
+                  'unique'=>'O cpf deve ser unico'
+
+              ];
+
+        $request->validate( $regras,$mensagens);
+        $vendas =new Venda();
+        $vendas->rua = $request->input('rua');
+        $vendas->numero = $request->input('numero');
+        $vendas->comp = $request->input('compl');
+
+        $vendas->cpf=$request->input('cpf');
+        $vendas->nome_comprador=$request->input('nome');
+        $vendas->conta=$request->input('nº');
+        $vendas->valor=$request->input('valor');
+        $vendas->user_id=$request->input('user_id');
+        $vendas->save();
+        //return view('factura', compact('vendas'));
+        return redirect('confirmar');
+    }
+
+
+
+
     /**
      * Display the specified resource.
      *

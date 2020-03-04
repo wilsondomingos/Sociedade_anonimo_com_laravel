@@ -6,16 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Carrinho extends Model
 {
-    public function usurio()
-    {
-        return $this->hasOne('App\User');
+    function artistas(){
+        return $this->hasMany('App\Artista');
     }
-    public function obras()
-    {
-        return $this->belongsTo('App\Obra');
+
+    function obras(){
+        return $this->belongsToMany("App\Obra");
     }
-    function artista(){
-        return $this->hasOne('App\Artista');
+
+
+    function usuarios(){
+        return $this->hasMany('App\User');
     }
-   
 }

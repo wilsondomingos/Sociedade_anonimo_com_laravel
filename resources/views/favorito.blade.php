@@ -9,31 +9,29 @@
 
 <div class="container conteudo-perfil">
     <div class="album py-5 bg-light linha">
-    <div class="row">
+    <div class="row cor">
 
                  @foreach($artista as $art)
                  @if(auth::user()->id == $art->user_id)
+
                 <img src="/storage/{{$art->imagem}}"  class="card-img-top" id="perfi" alt="">
                 @endif
                 @endforeach
 
-         <div class="mt-5 ml-3">
+         <div class="mt-5 ml-5">
+
            <h2>{{auth::user()->name}}</h2>
-           <hr>
+            <hr>
         </div>
 
         </div>
              <div class="menu-perfil mb-5">
 
-
        <ul>
 
-         <li>
-            <a href="{{asset('telefone')}} " class="btn-outline-secondary text-dark"> Tornar Artistista </a>
-          </li>
 
         <li>
-            <a href="{{asset('perfil_user ')}}"class="btn-outline-secondary text-dark"> Vendas </a>
+            <a href="{{asset('perfil_user ')}}"class="btn-outline-secondary text-dark"> Perfil </a>
         </li>
 
         <li>
@@ -42,10 +40,30 @@
         <li>
             <a href="{{asset('info_obra')}}"class="btn-outline-secondary text-dark">Cadastrar obras</a>
         </li>
+
      </ul>
+     <h4 class="container text-center mt-5">Favoritos</h4>
+     <hr>
+
 </div>
         </div>
       </div>
+
+
+</div>
+
+<div class="container my-3 mt-4">
+
+
+ <div class="album py-5 bg-light linha">
+        <div class="container">
+          <div class="row">
+
+
+          </div>
+        </div>
+      </div>
+ </div>
 
 
  @endauth

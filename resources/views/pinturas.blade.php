@@ -47,10 +47,13 @@
                       <form action="carrinho/store" method="POST">
                         @csrf
                         <input type="hidden" name="obra_id" value="{{ $ob['id'] }}">
-                        <input type="hidden" name="artista_id" value="{{ $ob['artista_id'] }}">
+                       <input type="hidden" name="artista_id" value="{{ $ob['artista_id'] }}">
+                        @if(auth::user()->id==$ob->artista_id)
 
+                         @else
                         <input type="hidden" name="user_id" value="{{ auth::user()->id}}">
-                        <button type="submit" class="btn btn-sm btn-outline-secondary">Add Carrinho</button>
+                        <button type="submit" class="btn btn-sm btn-outline-info">Add Carrinho</button>
+                        @endif
                         <a href="/detalhe/{{$ob->id}}" class="btn btn-sm btn-outline-secondary">Detalhe</a>
                     </form>
                     </div>

@@ -10,7 +10,7 @@
             <form action="telefone/store" method="POST"  class="col-12">
              @csrf
             <div class="d-flex justify-content-center">
-            <h1 class="mt-5 mb-3">Informações do artista</h1>
+            <h1 class="mt-5 mb-3">Contacto do Usuário</h1>
             </div>
                 <div class="d-flex justify-content-center ">
                     <div class="col-md-4 mb-3 mb-5  mt-5">

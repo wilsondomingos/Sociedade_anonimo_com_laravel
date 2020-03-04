@@ -3,6 +3,8 @@
 @section('content')
 
   <div class="container ">
+   <h1>Todas Obras</h1>
+    <hr>
 
           <div class="container-fluid my-3 ">
 
@@ -23,8 +25,9 @@
                       <img src="/storage/{{$ob->imagem}}" height="230px" class="card-img" alt="...">
                       <h6 class="card-subtitle mt-2 mb-2 text-muted">Valor: {{$ob->valor}}</h6>
                       <h6 class="card-subtitle  mb-2 text-muted">Quantidade: {{$ob->quantidade}}</h6>
-                      <h6 class="card-subtitle  mb-2 text-muted"> {{$ob->categoria}}</h6>
-                      <h6 class="card-subtitle  mb-2 text-muted"> {{$ob->categoria}}</h6>
+                      <h6 class="card-subtitle  mb-2 text-muted">Categoria: {{$ob->categoria}}</h6>
+                      <h6 class="card-subtitle  mb-2 text-muted">Estilo: {{$ob->estilo}}</h6>
+                      <h6 class="card-subtitle  mb-2 text-muted">Descrição: {{$ob->descricao}}</h6>
 
                         <h6 class="card-subtitle  mb-2 text-muted"></h6>
 

@@ -55,17 +55,6 @@
                         @endforeach
                         @endforeach
 
-                        @foreach ($artista as $art)
-                        @foreach ( $telefone as $tel)
-
-
-                        @if($tel->id == $art->telefone_id && $art->id == $ob->artista_id )
-
-                        <h6 class="card-subtitle mt-2 mb-2 text-muted">{{$tel->telefone }} </h6>
-
-                        @endif
-                        @endforeach
-                        @endforeach
 
                         @foreach ( $usuario as $us)
                         @foreach ($artista as $art)
@@ -74,7 +63,7 @@
                         <h6 class="card-subtitle mt-2 mb-2 text-muted">Rua: {{$art->rua}}</h6>
                         <h6 class="card-subtitle mt-2 mb-2 text-muted">Cidade: {{$art->cidade}}</h6>
                         <h6 class="card-subtitle mt-2 mb-2 text-muted">Estado: {{$art->estado}}</h6>
-                        <h6 class="card-subtitle mt-2 mb-2 text-muted">CPF: {{$art->cpf}}</h6>
+
 
                         @endif
                         @endforeach

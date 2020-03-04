@@ -13,6 +13,8 @@ class AdminController extends Controller
     public function __construct(){
         $this->middleware('auth:admin');
     }
+
+
     public function index(){
         return view('admin');
     }
@@ -30,7 +32,7 @@ class AdminController extends Controller
            ->join('users', 'Artistas.user_id', '=', 'users.id')
            ->join('telefones', 'Artistas.telefone_id', '=', 'telefones.id')
             ->orderByRaw('name')
-            ->select('Artistas.*','users.name','telefones.telefone')
+            ->select('Artistas.*','users.*','telefones.telefone')
             ->get();
         return view('adminListaArtista',compact('artista'));
     }

@@ -46,7 +46,7 @@ class ArtistasController extends Controller
             'rua'=>'required|min:3|max:45|',
             'cidade'=>'required|min:3|max:45',
             'estado'=>'required|min:3|max:45',
-            'cpf'=>'required',
+            'cpf'=>'required|min:14|max:14',
             'foto' => 'required|dimensions:min_width=100,min_height=200',
             'foto' => 'required|mimes:jpeg,bmp,png',
 
@@ -58,6 +58,8 @@ class ArtistasController extends Controller
             //'max'=>'É necessário no maximo 45 caracteres para :attribute',
 
             //'cpf'=>'É necessário no minimo 11 numeros para o cpf',
+            'cpf'=>'É necessário no minimo 14 e no maximo 14 caracteres para o cpf',
+            //'cpf.unique'=>'O cpf deve ser unico',
             'estado.min'=>'É necessário no minimo 3  caracteres para o estado',
             'estado.max'=>'É necessário no  no maximo 45 caracteres para o estado',
             'cidade.min'=>'É necessário no minimo 3 caracteres para a cidade',

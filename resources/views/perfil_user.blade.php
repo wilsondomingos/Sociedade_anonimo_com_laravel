@@ -31,14 +31,11 @@
        <ul>
 
 
-       <li>
-            <a href="{{asset('telefone')}} " class=" btn-outline-secondary text-dark"> Tornar Artistista </a>
-       </li>
 
 
 
         <li>
-            <a href="{{asset('perfil_user ')}}"class="btn-outline-secondary text-dark"> Vendas </a>
+            <a href="{{asset('perfil_user ')}}"class="btn-outline-secondary text-dark"> Perfil </a>
         </li>
 
         <li>
@@ -48,6 +45,8 @@
             <a href="{{asset('info_obra')}}"class="btn-outline-secondary text-dark">Cadastrar obras</a>
         </li>
      </ul>
+        <h4 class="container text-center mt-5">Perfil</h4>
+     <hr>
 </div>
         </div>
       </div>

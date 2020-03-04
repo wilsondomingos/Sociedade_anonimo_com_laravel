@@ -7,18 +7,22 @@
 
 
 <div class="container album py-5 bg-light  mb-5">
+    <h1>Todos Artistas</h1>
+    <hr>
         <div class="album py-5 bg-light ">
+
     <div class="row cor">
 
 
 @foreach ($artista as $art)
 
 
-    <div class="card border-dark mb-5 ml-2" style="max-width: 24rem;">
-  <div class="card-header bg-dark text-white border-dark ">Nome: {{$art->name}}</div>
+    <div class=" mb-5 ml-2" style="max-width: 24rem;">
+  <div class=" bg-dark text-white border-dark ">Nome: {{$art->name}}</div>
   <img src="/storage/{{$art->imagem}}"  class="card-img-top" id="perfi" alt="">
   <div class="card-body text-dark">
     <h5 class="card-title">Telefone: {{$art->telefone}}</h5>
+    <h5 class="card-title">E-mail: {{$art->email}}</h5>
       <h5 class="card-title">Rua: {{$art->rua}}</h5>
       <h5 class="card-title">Cidade: {{$art->cidade}}</h5>
       <h5 class="card-title">Estado: {{$art->estado}}</h5>

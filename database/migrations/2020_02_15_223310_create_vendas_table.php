@@ -18,9 +18,12 @@ class CreateVendasTable extends Migration
             $table->string('rua');
             $table->string('numero');
             $table->string('comp');
-            $table->integer('cpf');
+            $table->string('cpf');
             $table->string('nome_comprador');
             $table->string('conta');
+            $table->string('valor');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('Users')-> onDelete("cascade")-> onUpdate("cascade");
             $table->timestamps();
         });
     }

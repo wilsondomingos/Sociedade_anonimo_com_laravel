@@ -15,10 +15,11 @@ class CreateVendaObrasTable extends Migration
     {
         Schema::create('venda_obras', function (Blueprint $table) {
             $table->unsignedBigInteger('obra_id');
-            $table->foreign('obra_id')->references('id')->on('obras');
-            $table->unsignedBigInteger('venda_id');
-            $table->foreign('venda_id')->references('id')->on('vendas');
-            $table->primary(['venda_id','obra_id']);
+            $table->foreign('obra_id')->references('id')->on('obras')-> onDelete("cascade")-> onUpdate("cascade");
+            $table->unsignedBigInteger('artista_id');
+            $table->foreign('artista_id')->references('id')->on('artistas')-> onDelete("cascade")-> onUpdate("cascade");
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')-> onDelete("cascade")-> onUpdate("cascade");
             $table->timestamps();
 
         });

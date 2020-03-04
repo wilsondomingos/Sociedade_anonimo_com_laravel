@@ -6,6 +6,7 @@ use \App\Obra;
 use \App\Categoria;
 use \App\Estilo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ObrasController extends Controller
 {
@@ -32,10 +33,10 @@ class ObrasController extends Controller
      */
     public function create()
     {
-        $user = \App\Artista::all();
+        $artista = \App\Artista::all();
         $Cat = \App\Categoria::all();
         $Estilo = \App\Estilo::all();
-        return view('info_obra', compact(['Cat','Estilo']));
+        return view('info_obra', compact(['Cat','Estilo','artista']));
     }
 
     /**
@@ -48,13 +49,13 @@ class ObrasController extends Controller
     {
 
         $regras=[
-            'preco'=>'required|numeric',
+
+      'preco'=>'required|numeric',
             'quantidade'=>'required|numeric',
 
             'obra'=>'required|min:3|max:45',
             'data'=>'required|date',
             'tamanho'=>'required',
-
 
             'imagem' => 'required|dimensions:min_width=6000,min_height=6000',
             'imagem' => 'required|mimes:jpeg,bmp,png,jpg',
@@ -78,8 +79,10 @@ class ObrasController extends Controller
 
         ];
         $request->validate( $regras,$mensagens);
-        $obras =new \App\Obra();
-        $path=$request->file('imagem')->store('imagens','public');
+        $user=\App\User::all();
+        $art = \App\Artista::all();
+        $obras =new Obra();
+
 
         $obras->artista_id = $request->input('user_id');
         $obras->categoria_id = $request->input('categoria_id');
@@ -90,8 +93,11 @@ class ObrasController extends Controller
         $obras->nome_da_obra=$request->input('obra');
         $obras->criacao=$request->input('data');
         $obras->tamanho=$request->input('tamanho');
+        $path=$request->file('imagem')->store('imagens','public');
         $obras->imagem = $path;
         $obras->descricao=$request->input('descricao');
+
+
         $obras->save();
         return redirect()->route('perfil_user.estilo');
 
@@ -195,8 +201,6 @@ class ObrasController extends Controller
     {
 
         $obs = Obra::find($id);
-
-
         if (isset($obs)) {
             $obs->delete();
         }

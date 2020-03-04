@@ -10,10 +10,6 @@ class Obra extends Model
         return $this->hasMany('App\Artista');
     }
 
-    function vendas(){
-        return $this->belongsToMany("App\Venda","Venda_obra");
-    }
-
     function carrinho(){
         return $this->belongsTo('App\Carrinho');
     }

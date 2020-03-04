@@ -16,11 +16,11 @@ class CreateCarrinhosTable extends Migration
         Schema::create('carrinhos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('obra_id');
-            $table->foreign('obra_id')->references('id')->on('obras');
+            $table->foreign('obra_id')->references('id')->on('obras')-> onDelete("cascade")-> onUpdate("cascade");
             $table->unsignedBigInteger('artista_id');
-            $table->foreign('artista_id')->references('id')->on('artistas');
+            $table->foreign('artista_id')->references('id')->on('artistas')-> onDelete("cascade")-> onUpdate("cascade");
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')-> onDelete("cascade")-> onUpdate("cascade");
             $table->timestamps();
         });
     }

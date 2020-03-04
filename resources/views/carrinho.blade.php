@@ -2,7 +2,23 @@
 
 @section('body')
 @auth
+<?php $val=0;
+              foreach ($OBRAS as $ob){
+              foreach ($carrinho as $carr){
+              foreach ($artista as $art){
 
+
+               if($carr->artista_id==$art->id && $carr->obra_id==$ob->id && auth::user()->id==$carr->user_id){
+                     $val=$val+$ob->valor;
+
+
+
+               }
+            }
+        }
+    }
+
+         ?>
 <div class="conteudo container ">
 
 
@@ -22,10 +38,18 @@
                 </div>
 
                         <div class="col-lg-12">
-                            <form action="{{ asset('dados') }}" method="GET">
+                      
+                            <form action="/dados" method="POST">
+                            @csrf
+                                <div class="row">
+                                    <input type="number" name="nome" placeholder="<?php echo $val.' '.'R$'; ?>" value="{{ $val}}">
+                                </div>
 
                                 <div class="row">
-                                    <input type="number" name="nome" placeholder="0000-000" value="">
+                                    <input type="hidden" name="obra" placeholder="" value="{{ $ob->id}}">
+                                </div>
+                                <div class="row">
+                                    <input type="hidden" name="artista" placeholder="" value="{{ $ob->artista_id}}">
                                 </div>
 
                                 <div class="row mt-2">
@@ -33,13 +57,12 @@
                                         <button type="submit" class=" btn btn-sm btn-outline-secondary">Calcule o frete</button>
                                     </div>
                                     <div class="cal-lg-4 mr-5">
-                                        <form method="GET">
-                                            <button class=" btn btn-sm btn-outline-secondary" type="submit">Dados da Conta</button>
-                                        </form>
+
                                     </div>
                                 </div>
                         </div>
                         </form>
+
                     </div>
 
                 </div>
@@ -49,7 +72,7 @@
             <div class=" container mb-4 ">
                 <h1>
                  Obras no Carrinho
-                    
+
               </div>
             <div class="container">
               <div class="row">
@@ -95,10 +118,14 @@
                     </form>
                     </div>
                   </div>
+
+
          @endif
           @endforeach
           @endforeach
+
           @endforeach
+
           </div>
         </div>
       </div>

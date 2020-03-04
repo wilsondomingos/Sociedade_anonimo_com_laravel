@@ -48,7 +48,7 @@ class TelefonesController extends Controller
         $tele = new \App\Telefone();
         $tele->telefone = $request->input('telefone');
         $tele->save();
-        return redirect()->route('info_artista.create');
+        return redirect('telefone');
     }
 
     /**

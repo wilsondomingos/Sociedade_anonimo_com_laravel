@@ -45,6 +45,7 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
+
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -70,7 +71,9 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
+                                    <a href="{{asset('index')}}" class="nav-link text-center">Entrar como user</a>
                                 </div>
+
                             </li>
                         @endguest
                     </ul>
@@ -86,6 +89,6 @@
 
     </div>
     </div>
-     
+
 </body>
 </html>
