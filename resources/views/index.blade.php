@@ -4,6 +4,7 @@
 @auth
 
 
+
 <div class=" container  navbar-light  ">
 
 
@@ -91,9 +92,9 @@
                         @endif
                         @endforeach
                         @endforeach</h6>
-                      <img src="/storage/{{$ob->imagem}}" height="230px" class="card-img" alt="...">
-                      <h6 class="card-subtitle mt-2 mb-2 text-muted">Valor: {{$ob->valor}}</h6>
-                      <h6 class="card-subtitle  mb-2 text-muted">Quantidade: {{$ob->quantidade}}</h6>
+                      <img src="{{$ob->imagem}}" height="230px" class="card-img" alt="...">
+                      <h6 class="card-subtitle mt-2 mb-2 text-muted">Valor: R$ {{number_format($ob->valor ,2,',','.')}}</h6>
+
                       <h6 class="card-subtitle  mb-2 text-muted">@foreach ($categoria as $cat)
                         @if($ob->categoria_id == $cat->id)
                         <p class="card-text">Categoria: {{$cat->categoria }} </p>
@@ -111,13 +112,16 @@
                          @if(auth::user()->id==$ob->artista_id)
 
                          @else
+
                         <input type="hidden" name="user_id" value="{{ auth::user()->id}}">
                         <button type="submit" class="btn btn-sm btn-outline-info">Add Carrinho</button>
+
                         @endif
                         <a href="/detalhe/{{$ob->id}}" class="btn btn-sm btn-outline-secondary">Detalhe</a>
                     </form>
                     </div>
                   </div>
+
                 @endforeach
             </div>
             </div>
@@ -130,6 +134,9 @@
     <!-- inicio do quadro lado a lado -->
     @endauth
     @guest
+
+
+       
     <div class=" container  navbar-light  ">
 
 

@@ -11,8 +11,6 @@
                if($carr->artista_id==$art->id && $carr->obra_id==$ob->id && auth::user()->id==$carr->user_id){
                      $val=$val+$ob->valor;
 
-
-
                }
             }
         }
@@ -38,11 +36,11 @@
                 </div>
 
                         <div class="col-lg-12">
-                      
+
                             <form action="/dados" method="POST">
                             @csrf
                                 <div class="row">
-                                    <input type="number" name="nome" placeholder="<?php echo $val.' '.'R$'; ?>" value="{{ $val}}">
+                                    <input type="text" name="nome" placeholder="" value=" R$ {{ number_format($val ,2,',','.')}}">
                                 </div>
 
                                 <div class="row">
@@ -54,7 +52,7 @@
 
                                 <div class="row mt-2">
                                     <div class="cal-lg-4 mr-5">
-                                        <button type="submit" class=" btn btn-sm btn-outline-secondary">Calcule o frete</button>
+                                        <button type="submit" class=" btn btn-sm btn-outline-secondary">Comprar</button>
                                     </div>
                                     <div class="cal-lg-4 mr-5">
 
@@ -94,9 +92,9 @@
                         @endif
                         @endforeach
                         @endforeach</h6>
-                      <img src="/storage/{{$ob->imagem}}" height="230px" class="card-img" alt="...">
-                      <h6 class="card-subtitle mt-2 mb-2 text-muted">Valor: {{$ob->valor}}</h6>
-                      <h6 class="card-subtitle  mb-2 text-muted">Quantidade: {{$ob->quantidade}}</h6>
+                      <img src="{{$ob->imagem}}" height="230px" class="card-img" alt="...">
+                      <h6 class="card-subtitle mt-2 mb-2 text-muted">Valor: R$ {{number_format($ob->valor ,2,',','.')}}</h6>
+
                       <h6 class="card-subtitle  mb-2 text-muted">@foreach ($categoria as $cat)
                         @if($ob->categoria_id == $cat->id)
                         <p class="card-text">Categoria: {{$cat->categoria }} </p>

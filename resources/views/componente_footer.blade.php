@@ -16,20 +16,19 @@
               <h5 class="card-title ct">Atendimento</h5>
               <p class="card-title ct">+55 11.3078.1629 </p>
               <p class="card-title ct">Segunda à sexta 10h-18h </p>
-              <p class="card-title ct"><small class="text-muted">Last </small></p>
             </div>
           </div>
           <div class="card bg-dark">
 
             <div class="card-body fot ">
               <h5 class="card-title ct">Dúvidas</h5>
-              <p class="card-title ct">This </p>
-              <p class="card-title ct"><small class="text-muted">Last </small></p>
+              <p class="card-title ct"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus eligendi rerum optio amet, necessitatibus eveniet iste quos deserunt repudiandae id voluptatum, recusandae ad? Sint illo aperiam voluptatum numquam consequatur cumque? </p>
+              <p class="card-title ct"><small class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero temporibus, voluptate distinctio eaque exercitationem voluptatum aperiam, nesciunt voluptatibus ducimus iusto eligendi accusamus corporis id. Maiores possimus officiis debitis! Enim, corrupti? </small></p>
             </div>
           </div>
           <div class="card bg-dark">
 
-            <div class="card-body fot ">
+            <div class="card-body fot container ">
              <h5 class="card-title ct">Conecte-se com a Sociedade Anonima</h5>
              <div class="d-flex justify-content-center mt-3">
              <ul>
@@ -45,10 +44,11 @@
                   <a href="">
                     <img src="./img/twitter-3_icon-icons.com_50735.png" alt="twitter">
                   </a>
+                  <p class="container text-white"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit blanditiis voluptates, non accusantium suscipit magnam dolorum itaque corporis, nulla minima autem molestiae totam porro reiciendis necessitatibus? Delectus temporibus quasi quidem.</p>
+                  <p class="container text-white"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad odit ut optio nostrum, sequi nam? Recusandae ea, voluptatem hic maxime laudantium atque eius reprehenderit facere aut sapiente consectetur culpa saepe.</p>
                 </ul>
                 </div>
-              <p class="card-title ct">This </p>
-              <p class="card-title ct"><small class="text-muted">Last </small></p>
+
             </div>
           </div>
 
@@ -88,7 +88,8 @@
 
             </ul>
           </div>
-
+         <p class="container text-white"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit blanditiis voluptates, non accusantium suscipit magnam dolorum itaque corporis, nulla minima autem molestiae totam porro reiciendis necessitatibus? Delectus temporibus quasi quidem.</p>
+         <p class="container text-white"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad odit ut optio nostrum, sequi nam? Recusandae ea, voluptatem hic maxime laudantium atque eius reprehenderit facere aut sapiente consectetur culpa saepe.</p>
         </div>
           </footer>
 

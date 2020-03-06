@@ -39,8 +39,9 @@ class VendasController extends Controller
     {
         $userLogado=auth()->User()->id;
         //dd($userLogado);
-        $vendas = Venda::where('user_id', $userLogado,'id',)->get();
-        $Obra_vendidas = Venda_obra::where('user_id', $userLogado,'id',)->get();
+        $vendas = Venda::where('user_id', $userLogado)->get();
+        $Obra_vendidas = Venda_obra::where('user_id', $userLogado)->get();
+        $obras =\App\Obra::all();
         /*->join('users', 'vendas.user_id', '=', $userLogado)
         ->join('venda_obras', 'venda_obras.user_id', '=', 'Vendas.user_id')
         ->join('Obras', 'Obras.id', '=', 'venda_obras.obra_id')
@@ -49,7 +50,7 @@ class VendasController extends Controller
          ->get();
          */
          //dd($venda);
-        $pdf=PDF::loadView('factura',compact(['vendas','Obra_vendidas']));
+        $pdf=PDF::loadView('factura',compact(['vendas','Obra_vendidas','obras']));
         return  $pdf->setPaper('a4')->stream('factura.pdf');
     }
 
@@ -101,6 +102,7 @@ class VendasController extends Controller
         $carrinho->user_id = $request->input('user_id');
         $carrinho->save();
 
+
         $venda_obra->obra_id = $request->input('obra_id');
         $venda_obra->artista_id = $request->input('artista_id');
         $venda_obra->user_id = $request->input('user_id');
@@ -137,6 +139,7 @@ class VendasController extends Controller
                   'nº'=>'required',
                   'valor'=>'required|numeric',
                   //'user_id'=>'required|numeric',
+                  'quantidade'=>'required',
 
 
 
@@ -150,9 +153,10 @@ class VendasController extends Controller
                   'cpf'=>'É necessário no minimo 14 e no maximo 14 caracteres para o cpf',
                   'unique'=>'O cpf deve ser unico'
 
+
               ];
 
-        $request->validate( $regras,$mensagens);
+       // $request->validate( $regras,$mensagens);
         $vendas =new Venda();
         $vendas->rua = $request->input('rua');
         $vendas->numero = $request->input('numero');
@@ -163,6 +167,7 @@ class VendasController extends Controller
         $vendas->conta=$request->input('nº');
         $vendas->valor=$request->input('valor');
         $vendas->user_id=$request->input('user_id');
+        $vendas->quantidade=$request->input('quantidade');
         $vendas->save();
         //return view('factura', compact('vendas'));
         return redirect('confirmar');

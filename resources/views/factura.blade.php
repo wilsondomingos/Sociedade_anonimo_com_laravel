@@ -26,43 +26,78 @@
  </div>
 </div>
 
- <div class="container">
+ <div class="">
  <h4>Dados do comprador</h4>
-    <table class="table table-dark">
-        <thead class="">
+    <table class="table ">
+        <thead >
             <hr>
 
           <tr>
+            <th >Comprador</th>
+             <th >Compl</th>
+            <th >Rua</th>
 
-            <th scope="col">Rua</th>
-            <th scope="col">Número</th>
-            <th scope="col">Compl</th>
-            <th scope="col">CPF</th>
-            <th scope="col">Comprador</th>
-            <th scope="col">Valor</th>
+
+            <th >CPF</th>
+            <th>Valor</th>
+            <th >Quantidade</th>
+            <th >Número</th>
 
           </tr>
         </thead>
        @foreach ($vendas as $venda)
         <tbody>
           <tr>
-            <th scope="row"></th>
-            <td>{{$venda->rua}}</td>
-            <td>{{$venda->numero}}</td>
-            <td>{{$venda->comp}}</td>
-             <td>{{$venda->cpf}}</td>
-              <td>{{$venda->nome_comprador}}</td>
-              <td>{{$venda->valor}}</td>
-               @foreach ($Obra_vendidas as $vendidas)
-               @if($vendidas->user_id==$venda->user_id)
-                 <td>{{$vendidas->nome_da_obra}}</td>
-                 @endif
-               @endforeach
-          </tr>
+          <th scope="row"></th>
+          <td>{{$venda->nome_comprador .'|'}}</td>
+          <td>{{$venda->comp .'|'}}</td>
+            <td>{{$venda->rua .'|'}}</td>
 
+
+             <td>{{$venda->cpf .'|'}}</td>
+
+              <td>{{$venda->valor .'|'}}</td>
+              <td>{{$venda->quantidade .'|'}}</td>
+              <td>{{$venda->numero .'|'}}</td>
+
+          </tr>
         </tbody>
          @endforeach
+      </table>
+
+
+<!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx--->
+
+     <h4>Dados da obra</h4>
+      <table class="table ">
+        <thead >
+            <hr>
+
+          <tr>
+            <th >Nome da Obra</th>
+             <th >Valor</th>
+            <th >Criação</th>
+            <th >Tamanho</th>
+
+          </tr>
+        </thead>
+       @foreach ($obras as $ob)
+       @foreach ($Obra_vendidas as $ov)
+       @foreach ($vendas as $venda)
+      @if($venda->user_id==$ov->user_id && $ov->obra_id ==$ob->id)
+        <tbody>
+          <tr>
+          <th scope="row"></th>
+          <td>{{$ob->nome_da_obra .'|'}}</td>
+          <td>{{$ob->valor .'|'}}</td>
+          <td>{{$ob->criacao .'|'}}</td>
+          <td>{{$ob->tamanho .'|'}}</td>
+          </tr>
         </tbody>
+        @endif
+         @endforeach
+         @endforeach
+         @endforeach
       </table>
  </div>
 

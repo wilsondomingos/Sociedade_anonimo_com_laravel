@@ -48,8 +48,7 @@
                  @endif
                 </div>
                  <div class="form-group">
-                    <label for="quantidade">Quantidade</label>
-                    <input type="number" name="quantidade" value="{{$ob->quantidade}}" class="form-control {{$errors->has('quantidade') ? 'is-invalid' : ''}}" placeholder="informe a quantidade ">
+                    <input type="hidden" name="quantidade" value="{{$ob->quantidade}}" class="form-control {{$errors->has('quantidade') ? 'is-invalid' : ''}}" placeholder="informe a quantidade ">
                       @if ($errors->has('quantidade'))
                     <div class="invalid-feedback">
                         {{$errors->first('quantidade')}}
@@ -92,7 +91,9 @@
                 </div>
 
                 <div class="custom-file mb-4">
-                    <input type="file" class="custom-file-input  {{$errors->has('imagem') ? 'is-invalid' : ''}}" name="imagem"value="{{$ob->imagem}}"  id="imagem" lang="es">
+
+                   <input type="file" class="custom-file-input  {{$errors->has('imagem') ? 'is-invalid' : ''}}" name="imagem"  id="imagem" lang="es">
+
                     <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
                         @if ($errors->has('imagem'))
                     <div class="invalid-feedback">

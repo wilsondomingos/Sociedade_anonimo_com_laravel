@@ -38,3 +38,22 @@ p{
   text-transform: uppercase;
 }
 
+a:hover{
+    text-decoration: none;
+    color: white;
+}
+li a:hover{
+  text-decoration: none;
+
+  background-color: #cccc;
+}
+
+li a{
+  font-size: 9px;
+  text-decoration: none;
+  margin-top: 0px;
+}
+li{
+  list-style: none;
+  margin: -1px;
+}

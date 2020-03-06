@@ -99,6 +99,16 @@
                  @endif
               </div>
             </div>
+              <div>
+                <label for="quantidade">Qunatidade</label>
+                <input type="text" name="quantidade" class=" {{$errors->has('quantidade') ? 'is-invalid' : ''}}">
+                  @if ($errors->has('quantidade'))
+                    <div class="invalid-feedback">
+                        {{$errors->first('quantidade')}}
+                    </div>
+                 @endif
+              </div>
+            </div>
               <div class="row">
                 <input type="hidden" name="valor" placeholder="<?php echo $val.' '.'R$'; ?>" value="{{ $val}}">
             </div>
@@ -109,7 +119,7 @@
             <div class="confimacao">
               <div class="d-flex justify-content-between">
                 <div>
-                  <span>{{$val}} R$</span>
+                  <span>{{$val}}</span>
                 </div>
               </div>
               <div class="">

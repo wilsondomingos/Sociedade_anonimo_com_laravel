@@ -11,7 +11,7 @@
   justify-content: center;
   border: 1px solid #cccc;
   margin-left: 0.1vw;
- 
+
 
  }
  .foto-perfil{
@@ -24,5 +24,25 @@
    background-position: center;
 
  }
+
+ a:hover{
+    text-decoration: none;
+    color: white;
+}
+li a:hover{
+  text-decoration: none;
+
+  background-color: #cccc;
+}
+
+li a{
+  font-size: 9px;
+  text-decoration: none;
+  margin-top: 0px;
+}
+li{
+  list-style: none;
+  margin: -1px;
+}
 
 

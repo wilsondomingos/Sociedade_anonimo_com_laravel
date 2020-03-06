@@ -7,6 +7,7 @@ use \App\Categoria;
 use \App\Estilo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Storage;
 
 class ObrasController extends Controller
 {
@@ -82,6 +83,10 @@ class ObrasController extends Controller
         $user=\App\User::all();
         $art = \App\Artista::all();
         $obras =new Obra();
+        if(request()->file('imagem')){
+            $path=$request->file('imagem')->store('imagens','public');
+            $obras['imagem'] = Storage::disk('public')->url($path, "imagens");
+        }
 
 
         $obras->artista_id = $request->input('user_id');
@@ -93,8 +98,7 @@ class ObrasController extends Controller
         $obras->nome_da_obra=$request->input('obra');
         $obras->criacao=$request->input('data');
         $obras->tamanho=$request->input('tamanho');
-        $path=$request->file('imagem')->store('imagens','public');
-        $obras->imagem = $path;
+
         $obras->descricao=$request->input('descricao');
 
 
@@ -125,7 +129,7 @@ class ObrasController extends Controller
         $Cat = \App\Categoria::all();
         $Estilo = \App\Estilo::all();
         $ob = Obra::find($id);
-
+       //dd($ob->imagem);
        return view('editar_obra', compact(['ob','Estilo','Cat']));
     }
 
@@ -148,8 +152,7 @@ class ObrasController extends Controller
             'tamanho'=>'required',
 
 
-            'imagem' => 'required|dimensions:min_width=6000,min_height=6000',
-            'imagem' => 'required|mimes:jpeg,bmp,png,jpg',
+            'imagem' => 'mimes:jpeg,bmp,png,jpg',
             'descricao'=>'required|min:10|max:2000',
 
         ];
@@ -170,9 +173,11 @@ class ObrasController extends Controller
 
         ];
         $request->validate( $regras,$mensagens);
-
         $obras = \App\Obra::find($id);
-        $path=$request->file('imagem')->store('imagens','public');
+        if(request()->file('imagem')){
+            $path=$request->file('imagem')->store('imagens','public');
+            $obras['imagem'] = Storage::disk('public')->url($path, "imagens");
+        }
 
         $obras->artista_id = $request->input('user_id');
         $obras->categoria_id = $request->input('categoria_id');
@@ -183,7 +188,6 @@ class ObrasController extends Controller
         $obras->nome_da_obra=$request->input('obra');
         $obras->criacao=$request->input('data');
         $obras->tamanho=$request->input('tamanho');
-        $obras->imagem = $path;
         $obras->descricao=$request->input('descricao');
         $obras->save();
 

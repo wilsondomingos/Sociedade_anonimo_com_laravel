@@ -43,7 +43,7 @@
 
                     <a class="icons" href="{{ asset('carrinho') }}">
 
-                        <img class="icons" src="img/icons/carro.png"  alt="bolca">
+                        <img class="icons" src="{{asset('img/icons/carro.png')}}"  alt="bolca">
 
                     </a>
                 </li>

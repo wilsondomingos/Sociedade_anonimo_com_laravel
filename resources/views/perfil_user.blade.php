@@ -78,9 +78,9 @@
                         @endif
                         @endforeach
                         @endforeach</h6>
-                      <img src="/storage/{{$ob->imagem}}" height="230px" class="card-img" alt="...">
-                      <h6 class="card-subtitle mt-2 mb-2 text-muted">Valor: {{$ob->valor}}</h6>
-                      <h6 class="card-subtitle  mb-2 text-muted">Quantidade: {{$ob->quantidade}}</h6>
+                      <img src="{{$ob->imagem}}" height="230px" class="card-img" alt="...">
+                      <h6 class="card-subtitle mt-2 mb-2 text-muted">Valor: R$ {{number_format($ob->valor ,2,',','.')}}</h6>
+
                       <h6 class="card-subtitle  mb-2 text-muted">@foreach ($categoria as $cat)
                         @if($ob->categoria_id == $cat->id)
                         <p class="card-text">Categoria: {{$cat->categoria }} </p>

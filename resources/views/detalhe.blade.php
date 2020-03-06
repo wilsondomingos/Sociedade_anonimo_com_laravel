@@ -80,12 +80,12 @@
                 <div class=" m-1 ml-4" style="width: 44.2rem;">
                     <div class="card-body  margim">
 
-                   <img src="/storage/{{$ob->imagem}}" height="430px" class="card-img margim" alt="...">
+                   <img src="{{$ob->imagem}}" height="430px" class="card-img margim" alt="...">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body ">
-                        <h6 class="card-subtitle mt-2 mb-2 text-muted">Preço: {{$ob->valor}}</h6>
-                        <h6 class="card-subtitle mt-2 mb-2 text-muted">Quantidade: {{$ob->quantidade}}</h6>
+                        <h6 class="card-subtitle mt-2 mb-2 text-muted">Valor: R$ {{number_format($ob->valor ,2,',','.')}}</h6>
+
                         <h6 class="card-subtitle mt-2 mb-2 text-muted">Nome da obra : {{$ob->nome_da_obra}}</h6>
                         <h6 class="card-subtitle mt-2 mb-2 text-muted">Data de criação : {{$ob->criacao}}</h6>
 

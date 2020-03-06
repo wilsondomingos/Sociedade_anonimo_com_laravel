@@ -52,10 +52,10 @@
                     @endif
                 </div>
                 <div class="form-group">
-                    <label for="quantidade">Quantidade</label>
-                    <input type="number" name="quantidade"
+
+                    <input type="hidden" name="quantidade"
                         class="form-control {{$errors->has('quantidade') ? 'is-invalid' : ''}}"
-                        placeholder="informe a quantidade ">
+                        value="1">
                     @if ($errors->has('quantidade'))
                     <div class="invalid-feedback">
                         {{$errors->first('quantidade')}}
