@@ -25,19 +25,19 @@
 </head>
 
 <body>
-<div class="acimaheader">
+<div class="acimaheader"  style="margin-bottom: 20vh;">
 
 </div>
-    <header class="responsive ">
-        <div class=" container log head ">
+    <header class="responsive fixed-top" style="margin-bottom: 5;">
+        <div class=" container log head " style="height: 10vh;">
 
-            <div class="logo col-lg-3  sm-ml-0-mr-0">
+            <div class="logo col-lg-3  sm-ml-0-mr-0 mt-3">
                 <h1>
                     <h2 class="text-white ">Sociedade an{}nimo</h2>
                 </h1>
             </div>
 
-            <div class="enter d-flex flex-row-reverse col-lg-8  ">
+            <div class="enter d-flex flex-row-reverse col-lg-8 mt-3 ">
                  <h6 class="text-danger"><strong>  </strong></h6>
                 <li>
 
@@ -90,44 +90,44 @@
 
 
 
+        <nav class="navbar navbar-expand-lg navbar-light bg-light  ">
+
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse  " id="navbarNav" >
+  <ul class="navbar-nav container">
+    <li class="nav-item active">
+      <a class="nav-link text-dark" href="{{ asset('index') }}">Home <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-dark" href="{{ asset('pinturas') }}">Pinturas</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-dark" href="{{ asset('fotografias') }}">Fotografias</a>
+    </li>
+      </li>
+    <li class="nav-item">
+      <a class="nav-link text-dark" href="{{ asset('desenhos') }}">Desenhos</a>
+    </li>
+    <li class="nav-item">
+     <a class="nav-link text-dark" href="{{ asset('prints') }}">Prints</a>
+    </li>
+      <li class="nav-item">
+     <a class="nav-link text-dark" href="{{ asset('hq') }}">HQ - Quadradinhos</a>
+    </li>
+      <li class="nav-item">
+     <a class="nav-link text-dark" href="{{ asset('escultura') }}">Esculturas</a>
+    </li>
+     <li class="nav-item">
+     <a class="nav-link text-dark" href="{{ asset('arquitetura') }}">Arquitetura</a>
+    </li>
+  </ul>
+</div>
+</nav>
 
     </header>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light ">
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse  " id="navbarNav">
-    <ul class="navbar-nav container">
-      <li class="nav-item active">
-        <a class="nav-link text-dark" href="{{ asset('index') }}">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-dark" href="{{ asset('pinturas') }}">Pinturas</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-dark" href="{{ asset('fotografias') }}">Fotografias</a>
-      </li>
-        </li>
-      <li class="nav-item">
-        <a class="nav-link text-dark" href="{{ asset('desenhos') }}">Desenhos</a>
-      </li>
-      <li class="nav-item">
-       <a class="nav-link text-dark" href="{{ asset('prints') }}">Prints</a>
-      </li>
-        <li class="nav-item">
-       <a class="nav-link text-dark" href="{{ asset('hq') }}">HQ - Quadradinhos</a>
-      </li>
-        <li class="nav-item">
-       <a class="nav-link text-dark" href="{{ asset('escultura') }}">Esculturas</a>
-      </li>
-       <li class="nav-item">
-       <a class="nav-link text-dark" href="{{ asset('arquitetura') }}">Arquitetura</a>
-      </li>
-    </ul>
-  </div>
-</nav>
 
     <script src="{{asset('js/javasscript.js')}}"></script>
 </body>
